@@ -1,0 +1,921 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Land Manual of Jharkhand | Salendra Kumar Verma</title>
+  <meta name="description" content="झारखंड में भूमि खरीद-बिक्री का पूर्ण मार्गदर्शक - Land Manual of Jharkhand by Salendra Kumar Verma. Complete legal & procedural handbook for buying, selling, and verifying land.">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Noto+Sans+Devanagari:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              dark: '#062c21',
+              forest: '#0c4436',
+              emerald: '#0f765e',
+              mint: '#ecfdf5',
+              gold: '#d97706',
+              goldLight: '#fbbf24',
+              goldAccent: '#fef3c7'
+            }
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            display: ['"Cinzel"', 'serif'],
+            hindi: ['"Noto Sans Devanagari"', 'sans-serif'],
+          },
+          boxShadow: {
+            'book': '0 20px 40px -15px rgba(6, 44, 33, 0.4), 0 0 0 1px rgba(251, 191, 36, 0.15)',
+            'gold-glow': '0 10px 25px -5px rgba(217, 119, 6, 0.35)',
+          }
+        }
+      }
+    }
+  </script>
+  
+  <style>
+    /* 3D Book Visual styling */
+    .book-container {
+      perspective: 1200px;
+    }
+    .book-cover-3d {
+      transform-style: preserve-3d;
+      transform: rotateY(-18deg) rotateX(6deg);
+      transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.5s ease;
+    }
+    .book-container:hover .book-cover-3d {
+      transform: rotateY(-8deg) rotateX(2deg) translateY(-8px);
+    }
+    .gold-foil-text {
+      background: linear-gradient(135deg, #fef08a 0%, #f59e0b 50%, #d97706 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .gold-border-gradient {
+      border-image: linear-gradient(to right, #fbbf24, #d97706, #fbbf24) 1;
+    }
+  </style>
+</head>
+<body class="font-sans bg-slate-50 text-slate-800 antialiased selection:bg-brand-goldLight selection:text-brand-dark">
+
+  <!-- TOP ANNOUNCEMENT BAR -->
+  <div class="bg-gradient-to-r from-brand-dark via-brand-forest to-brand-dark text-white text-xs sm:text-sm py-2 px-4 text-center font-medium border-b border-amber-500/20">
+    <div class="container mx-auto flex items-center justify-center gap-2">
+      <span class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-bold bg-amber-400 text-brand-dark uppercase tracking-wider">New Release</span>
+      <span>Official Release Offer: Save up to <strong>40% on Pre-Orders</strong> this week only!</span>
+    </div>
+  </div>
+
+  <!-- 1. NAVBAR -->
+  <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-emerald-900/10 transition-all">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <!-- Logo & Title -->
+      <a href="#" class="flex items-center gap-3 group">
+        <div class="w-11 h-11 rounded-lg bg-brand-forest flex items-center justify-center text-amber-400 shadow-md group-hover:scale-105 transition-transform">
+          <!-- Scale of Justice / Book SVG Emblem -->
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+          </svg>
+        </div>
+        <div>
+          <span class="font-display font-extrabold text-base sm:text-lg tracking-tight text-brand-dark block leading-tight">
+            Land Manual of Jharkhand
+          </span>
+          <span class="text-[11px] sm:text-xs font-semibold text-emerald-700 tracking-wider uppercase block">
+            By Salendra Kumar Verma
+          </span>
+        </div>
+      </a>
+
+      <!-- Navigation Links & CTA -->
+      <div class="flex items-center gap-4 sm:gap-6">
+        <nav class="hidden md:flex items-center gap-6 text-sm font-semibold text-slate-600">
+          <a href="#formats" class="hover:text-brand-forest transition">Formats</a>
+          <a href="#benefits" class="hover:text-brand-forest transition">Benefits</a>
+          <a href="#features" class="hover:text-brand-forest transition">Key Topics</a>
+          <a href="#author" class="hover:text-brand-forest transition">Author</a>
+        </nav>
+
+        <a href="#hero-checkout" class="relative inline-flex items-center justify-center px-5 py-2.5 sm:px-6 sm:py-3 text-sm font-bold text-brand-dark bg-gradient-to-r from-amber-400 via-amber-300 to-amber-500 rounded-full shadow-gold-glow hover:shadow-lg hover:scale-105 active:scale-95 transition-all duration-200">
+          <span>Order Now</span>
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 ml-1.5 -mr-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- 2. HERO SECTION -->
+  <section class="relative pt-10 pb-20 lg:pt-16 lg:pb-28 overflow-hidden bg-gradient-to-b from-emerald-50/70 via-white to-slate-50">
+    <!-- Decorative background elements -->
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-full pointer-events-none overflow-hidden opacity-40">
+      <div class="absolute -top-32 left-10 w-96 h-96 rounded-full bg-emerald-200/50 blur-3xl"></div>
+      <div class="absolute top-48 right-10 w-96 h-96 rounded-full bg-amber-200/40 blur-3xl"></div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      
+      <!-- Trust Badge Top -->
+      <div class="text-center mb-6">
+        <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-emerald-100 text-brand-forest border border-emerald-200/80 shadow-sm">
+          <svg class="w-4 h-4 text-emerald-600" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+          </svg>
+          Comprehensive Guide based on CNT Act, SPT Act & Jharkhand Revenue Codes
+        </span>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+        
+        <!-- Left Column: Headlines, Format Selector, and Pre-Order CTA -->
+        <div class="lg:col-span-7 space-y-7 text-center lg:text-left" id="hero-checkout">
+          
+          <div>
+            <h1 class="font-display text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-black text-brand-dark tracking-tight leading-[1.15] uppercase">
+              LAND MANUAL OF <span class="text-brand-forest underline decoration-amber-400 decoration-wavy decoration-2 underline-offset-8">JHARKHAND</span>
+            </h1>
+            
+            <p class="mt-5 font-hindi text-lg sm:text-2xl md:text-2xl font-bold text-emerald-800 leading-snug">
+              झारखंड में भूमि खरीद-बिक्री का पूर्ण मार्गदर्शक
+            </p>
+            <p class="mt-2 text-sm sm:text-base font-medium text-slate-600 italic">
+              (A Complete, Authoritative Guide to Buying and Selling Land in Jharkhand)
+            </p>
+          </div>
+
+          <p class="text-slate-600 text-sm sm:text-base leading-relaxed max-w-2xl mx-auto lg:mx-0">
+            Written by renowned legal scholar & revenue expert <strong>Salendra Kumar Verma</strong>, this manual is the definitive blueprint for buyers, sellers, advocates, builders, and investors to navigate title checks, land verification, registry procedures, mutation, and dispute prevention safely.
+          </p>
+
+          <!-- FORMAT SELECTION AREA -->
+          <div id="formats" class="pt-2">
+            <div class="flex items-center justify-between mb-3">
+              <label class="text-xs sm:text-sm font-bold text-slate-700 uppercase tracking-wider flex items-center gap-1.5">
+                <svg class="w-4 h-4 text-brand-forest" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+                </svg>
+                Choose Your Preferred Format:
+              </label>
+              <span class="text-xs font-semibold text-emerald-700 bg-emerald-50 px-2.5 py-0.5 rounded-full border border-emerald-200">
+                Guaranteed Pre-Order Price
+              </span>
+            </div>
+
+            <!-- 3 Sleek Selectable Format Cards -->
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+              
+              <!-- Format 1: Physical Book (Default Active) -->
+              <label class="format-card relative flex flex-col p-4 bg-white border-2 border-brand-forest rounded-xl cursor-pointer shadow-sm hover:shadow-md transition-all duration-200 group">
+                <input type="radio" name="book_format" value="physical" class="sr-only" checked onchange="updateFormatSelection('physical', 'Physical Book (Hardcopy)', '₹799', 'Free Home Delivery Across India')">
+                <div class="active-badge absolute -top-2.5 left-1/2 -translate-x-1/2 bg-brand-forest text-amber-300 text-[10px] font-extrabold uppercase tracking-wider px-2 py-0.5 rounded-full shadow-sm">
+                  Most Popular
+                </div>
+                <div class="flex items-center justify-between mb-2">
+                  <span class="p-1.5 rounded-lg bg-emerald-50 text-emerald-800">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                    </svg>
+                  </span>
+                  <span class="selection-indicator w-5 h-5 rounded-full border-2 border-brand-forest bg-brand-forest flex items-center justify-center text-white">
+                    <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                  </span>
+                </div>
+                <span class="font-bold text-slate-800 text-sm">Physical Book</span>
+                <span class="text-[11px] text-slate-500 font-medium">Hardcover Edition</span>
+                <div class="mt-2.5 pt-2 border-t border-slate-100 flex items-baseline gap-1.5">
+                  <span class="text-lg font-black text-brand-dark">₹799</span>
+                  <span class="text-xs text-slate-400 line-through">₹999</span>
+                </div>
+              </label>
+
+              <!-- Format 2: E-Book -->
+              <label class="format-card relative flex flex-col p-4 bg-white border border-slate-200 rounded-xl cursor-pointer hover:border-emerald-500 hover:shadow-md transition-all duration-200 group">
+                <input type="radio" name="book_format" value="ebook" class="sr-only" onchange="updateFormatSelection('ebook', 'E-Book (Instant PDF/ePub)', '₹399', 'Instant Digital Download link sent to Email/WhatsApp')">
+                <div class="flex items-center justify-between mb-2">
+                  <span class="p-1.5 rounded-lg bg-emerald-50 text-emerald-800">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                    </svg>
+                  </span>
+                  <span class="selection-indicator w-5 h-5 rounded-full border-2 border-slate-300 flex items-center justify-center text-white"></span>
+                </div>
+                <span class="font-bold text-slate-800 text-sm">E-Book</span>
+                <span class="text-[11px] text-slate-500 font-medium">PDF &amp; ePub (Instant)</span>
+                <div class="mt-2.5 pt-2 border-t border-slate-100 flex items-baseline gap-1.5">
+                  <span class="text-lg font-black text-brand-dark">₹399</span>
+                  <span class="text-xs text-slate-400 line-through">₹599</span>
+                </div>
+              </label>
+
+              <!-- Format 3: Audiobook -->
+              <label class="format-card relative flex flex-col p-4 bg-white border border-slate-200 rounded-xl cursor-pointer hover:border-emerald-500 hover:shadow-md transition-all duration-200 group">
+                <input type="radio" name="book_format" value="audiobook" class="sr-only" onchange="updateFormatSelection('audiobook', 'Audiobook (Narrated Audio)', '₹499', 'Stream &amp; Download complete Hindi Narration')">
+                <div class="flex items-center justify-between mb-2">
+                  <span class="p-1.5 rounded-lg bg-emerald-50 text-emerald-800">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 100-6 3 3 0 000 6z" />
+                    </svg>
+                  </span>
+                  <span class="selection-indicator w-5 h-5 rounded-full border-2 border-slate-300 flex items-center justify-center text-white"></span>
+                </div>
+                <span class="font-bold text-slate-800 text-sm">Audiobook</span>
+                <span class="text-[11px] text-slate-500 font-medium">Clear Hindi Audio</span>
+                <div class="mt-2.5 pt-2 border-t border-slate-100 flex items-baseline gap-1.5">
+                  <span class="text-lg font-black text-brand-dark">₹499</span>
+                  <span class="text-xs text-slate-400 line-through">₹749</span>
+                </div>
+              </label>
+
+            </div>
+          </div>
+
+          <!-- Dynamic Pre-Order CTA Button -->
+          <div class="space-y-3 pt-1">
+            <button id="preorder-button" onclick="handlePreOrderAction()" class="w-full sm:w-auto min-w-[320px] px-8 py-4 bg-gradient-to-r from-amber-500 via-amber-400 to-amber-500 hover:from-amber-400 hover:to-amber-500 text-brand-dark font-extrabold text-lg rounded-xl shadow-gold-glow hover:shadow-xl hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200 flex items-center justify-center gap-3 mx-auto lg:mx-0 group">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-brand-dark group-hover:scale-110 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+              </svg>
+              <span id="btn-text">Pre-Order Physical Book (₹799)</span>
+            </button>
+
+            <!-- Delivery Guarantee note -->
+            <p id="format-note" class="text-xs text-slate-500 flex items-center justify-center lg:justify-start gap-1.5">
+              <svg class="w-4 h-4 text-emerald-600" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd" />
+              </svg>
+              <span>Dispatch begins next Monday. Free shipping anywhere in Jharkhand &amp; India.</span>
+            </p>
+          </div>
+
+          <!-- Social Proof Bar -->
+          <div class="pt-4 border-t border-slate-200/80 flex flex-wrap items-center justify-center lg:justify-start gap-6 text-xs text-slate-500">
+            <div class="flex items-center gap-1 text-amber-500">
+              <span class="font-bold text-slate-800 text-sm mr-1">4.9</span>
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <span class="text-slate-500 ml-1">(420+ pre-orders)</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+              <span>100% Certified Legal Content</span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Right Column: Visual Book Cover Placeholder Area (3D Realistic Mockup) -->
+        <div class="lg:col-span-5 flex justify-center items-center">
+          <div class="book-container relative w-full max-w-[340px] sm:max-w-[380px] py-6">
+            
+            <!-- Glow background -->
+            <div class="absolute inset-0 bg-gradient-to-tr from-brand-forest/30 to-amber-400/20 rounded-full blur-2xl -z-10"></div>
+
+            <!-- Book 3D Mockup Container -->
+            <div class="book-cover-3d relative rounded-r-2xl rounded-l-md bg-gradient-to-br from-brand-dark via-brand-forest to-slate-900 shadow-book border-t border-r border-b border-amber-400/40 text-white overflow-hidden p-7 sm:p-9 flex flex-col justify-between aspect-[1/1.45] select-none">
+              
+              <!-- Spine fold highlight effect -->
+              <div class="absolute top-0 bottom-0 left-0 w-5 bg-gradient-to-r from-black/60 via-white/10 to-transparent"></div>
+              <div class="absolute top-0 bottom-0 left-5 w-[1px] bg-amber-400/30"></div>
+
+              <!-- Top Header & Crest -->
+              <div class="relative z-10 text-center pl-2">
+                <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full border border-amber-400/40 bg-brand-dark/80 text-[10px] font-bold tracking-widest text-amber-300 uppercase">
+                  <span>★</span> Official Legal Edition <span>★</span>
+                </div>
+                
+                <!-- Emblem Placeholder -->
+                <div class="mt-4 flex justify-center">
+                  <div class="w-14 h-14 rounded-full border-2 border-amber-400/60 bg-emerald-950/70 flex items-center justify-center p-2.5 shadow-inner">
+                    <svg class="w-full h-full text-amber-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+                      <circle cx="12" cy="12" r="10" stroke="currentColor"/>
+                      <path d="M12 2a14.5 14.5 0 0 0 0 20M2 12h20"/>
+                      <path d="M8 8l8 8M16 8l-8 8" stroke-opacity="0.3"/>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Book Center Title Block -->
+              <div class="relative z-10 text-center my-auto pl-2 py-4">
+                <span class="text-[11px] font-bold uppercase tracking-[0.25em] text-amber-200/90 block mb-1">
+                  The Authoritative Treatise
+                </span>
+                <h2 class="font-display font-extrabold text-2xl sm:text-3xl text-white tracking-wide uppercase leading-tight drop-shadow-md">
+                  LAND MANUAL OF<br>
+                  <span class="gold-foil-text font-black text-3xl sm:text-4xl">JHARKHAND</span>
+                </h2>
+                
+                <div class="w-24 h-0.5 bg-gradient-to-r from-transparent via-amber-400 to-transparent mx-auto my-3"></div>
+
+                <p class="font-hindi text-amber-100 font-bold text-sm sm:text-base leading-snug tracking-wide">
+                  झारखंड में भूमि खरीद-बिक्री का पूर्ण मार्गदर्शक
+                </p>
+                <p class="text-[10px] text-emerald-200/80 font-medium tracking-wide mt-1">
+                  With CNT Act, SPT Act &amp; Registry Mutation Rules
+                </p>
+              </div>
+
+              <!-- Bottom Author Block -->
+              <div class="relative z-10 text-center pl-2 pt-3 border-t border-amber-400/30">
+                <span class="text-[10px] uppercase font-semibold tracking-wider text-slate-300 block">Author</span>
+                <p class="font-serif font-bold text-base sm:text-lg text-amber-300 tracking-wide">
+                  Salendra Kumar Verma
+                </p>
+              </div>
+
+              <!-- Subtle gold corner accents -->
+              <div class="absolute top-2 right-2 w-4 h-4 border-t-2 border-r-2 border-amber-400/50"></div>
+              <div class="absolute bottom-2 right-2 w-4 h-4 border-b-2 border-r-2 border-amber-400/50"></div>
+            </div>
+
+            <!-- Under-book Shadow Depth -->
+            <div class="w-4/5 h-6 mx-auto bg-brand-dark/25 rounded-full blur-xl -mt-2"></div>
+
+            <p class="text-center text-xs text-slate-500 font-medium mt-3">
+              Illustrated Reference Mockup • 480+ Comprehensive Pages
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- 3. FORMAT BENEFITS SECTION (3-Column Layout) -->
+  <section id="benefits" class="py-20 bg-white border-y border-emerald-900/10 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-xs font-bold uppercase tracking-widest text-emerald-700 bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200">
+          Tailored To Your Lifestyle
+        </span>
+        <h2 class="font-display text-3xl sm:text-4xl font-extrabold text-brand-dark mt-3">
+          Available in Three Flexible Formats
+        </h2>
+        <div class="w-16 h-1 bg-amber-400 mx-auto mt-4 rounded-full"></div>
+        <p class="text-slate-600 text-sm sm:text-base mt-4">
+          Whether you study at your desk, review clauses on your phone at the registry office, or commute on the road—get uninterrupted access to Jharkhand's land laws.
+        </p>
+      </div>
+
+      <!-- 3-Column Benefits Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-10">
+        
+        <!-- Column 1: E-Book -->
+        <div class="bg-gradient-to-b from-slate-50 to-emerald-50/30 rounded-2xl p-8 border border-emerald-900/10 hover:border-emerald-600/30 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 flex flex-col justify-between group">
+          <div>
+            <div class="w-16 h-16 rounded-2xl bg-emerald-700 text-white flex items-center justify-center mb-6 shadow-md shadow-emerald-700/20 group-hover:scale-110 group-hover:bg-brand-forest transition-all duration-300">
+              <!-- E-Book SVG Icon: Device / Screen / Lightning -->
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-amber-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" stroke-width="1.5" class="opacity-70" />
+              </svg>
+            </div>
+
+            <div class="inline-block text-xs font-bold uppercase tracking-wider text-emerald-800 bg-emerald-100/70 px-2.5 py-0.5 rounded mb-2">
+              Digital Edition
+            </div>
+            <h3 class="text-2xl font-bold text-brand-dark mb-3">
+              Instant Access
+            </h3>
+            <p class="text-slate-600 text-sm leading-relaxed mb-6">
+              Read instantly on your mobile, tablet, or PC. Fully searchable with hyperlinked chapters, legal statutory forms, and quick-reference appendices.
+            </p>
+
+            <ul class="space-y-2.5 text-xs text-slate-700 font-medium">
+              <li class="flex items-center gap-2">
+                <svg class="w-4 h-4 text-emerald-600 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                <span>Instant PDF &amp; ePub download</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <svg class="w-4 h-4 text-emerald-600 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                <span>Search sections by keyword or law article</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <svg class="w-4 h-4 text-emerald-600 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                <span>Lifetime digital updates included</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="mt-8 pt-4 border-t border-slate-200">
+            <a href="#hero-checkout" onclick="selectFormatByCard('ebook')" class="text-sm font-bold text-emerald-700 hover:text-emerald-900 inline-flex items-center gap-1 group-hover:gap-2 transition-all">
+              <span>Choose E-Book format</span> &rarr;
+            </a>
+          </div>
+        </div>
+
+        <!-- Column 2: Audiobook -->
+        <div class="bg-gradient-to-b from-slate-50 to-amber-50/40 rounded-2xl p-8 border border-amber-400/30 hover:border-amber-500 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 flex flex-col justify-between group relative overflow-hidden">
+          
+          <div class="absolute -right-12 -top-12 w-28 h-28 bg-amber-200/40 rounded-full blur-xl"></div>
+
+          <div>
+            <div class="w-16 h-16 rounded-2xl bg-brand-forest text-white flex items-center justify-center mb-6 shadow-md shadow-brand-forest/20 group-hover:scale-110 group-hover:bg-brand-dark transition-all duration-300">
+              <!-- Audiobook SVG Icon: Headphones / Sound wave -->
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-amber-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" />
+              </svg>
+            </div>
+
+            <div class="inline-block text-xs font-bold uppercase tracking-wider text-amber-800 bg-amber-100 px-2.5 py-0.5 rounded mb-2">
+              Audio Edition
+            </div>
+            <h3 class="text-2xl font-bold text-brand-dark mb-3">
+              Listen Anywhere
+            </h3>
+            <p class="text-slate-600 text-sm leading-relaxed mb-6">
+              Professionally narrated in engaging, clear Hindi. Perfect for commuting, traveling, or listening while reviewing land files and site visits.
+            </p>
+
+            <ul class="space-y-2.5 text-xs text-slate-700 font-medium">
+              <li class="flex items-center gap-2">
+                <svg class="w-4 h-4 text-emerald-600 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                <span>8.5 hours of studio-recorded narration</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <svg class="w-4 h-4 text-emerald-600 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                <span>Chapter-by-chapter bookmarks</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <svg class="w-4 h-4 text-emerald-600 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                <span>Offline playback on phone and car audio</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="mt-8 pt-4 border-t border-slate-200">
+            <a href="#hero-checkout" onclick="selectFormatByCard('audiobook')" class="text-sm font-bold text-amber-700 hover:text-amber-900 inline-flex items-center gap-1 group-hover:gap-2 transition-all">
+              <span>Choose Audiobook format</span> &rarr;
+            </a>
+          </div>
+        </div>
+
+        <!-- Column 3: Physical Book -->
+        <div class="bg-gradient-to-b from-slate-50 to-emerald-50/50 rounded-2xl p-8 border-2 border-brand-forest/40 hover:border-brand-forest transition-all duration-300 hover:shadow-xl hover:-translate-y-1 flex flex-col justify-between group shadow-sm">
+          <div>
+            <div class="w-16 h-16 rounded-2xl bg-brand-dark text-white flex items-center justify-center mb-6 shadow-md shadow-brand-dark/30 group-hover:scale-110 group-hover:bg-brand-forest transition-all duration-300">
+              <!-- Physical Book SVG Icon: Open Book with Ribbon -->
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+              </svg>
+            </div>
+
+            <div class="inline-block text-xs font-bold uppercase tracking-wider text-brand-forest bg-emerald-100 px-2.5 py-0.5 rounded mb-2">
+              Physical Edition
+            </div>
+            <h3 class="text-2xl font-bold text-brand-dark mb-3">
+              Premium Print
+            </h3>
+            <p class="text-slate-600 text-sm leading-relaxed mb-6">
+              High-quality paperback for your personal library and law chamber. Crisp typography, durable binding, and margin space for your notes.
+            </p>
+
+            <ul class="space-y-2.5 text-xs text-slate-700 font-medium">
+              <li class="flex items-center gap-2">
+                <svg class="w-4 h-4 text-emerald-600 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                <span>Premium acid-free archival quality paper</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <svg class="w-4 h-4 text-emerald-600 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                <span>Foil-embossed sturdy collector cover</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <svg class="w-4 h-4 text-emerald-600 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                <span>Free doorstep delivery in secure bubble wrap</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="mt-8 pt-4 border-t border-slate-200">
+            <a href="#hero-checkout" onclick="selectFormatByCard('physical')" class="text-sm font-bold text-brand-forest hover:text-brand-dark inline-flex items-center gap-1 group-hover:gap-2 transition-all">
+              <span>Choose Physical format</span> &rarr;
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- 4. KEY FEATURES SECTION (2x2 Grid Layout) -->
+  <section id="features" class="py-20 lg:py-28 bg-slate-50 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-xs font-bold uppercase tracking-widest text-emerald-800 bg-emerald-100/70 px-3.5 py-1 rounded-full border border-emerald-300">
+          In-Depth Legal Mastery
+        </span>
+        <h2 class="font-display text-3xl sm:text-4xl font-extrabold text-brand-dark mt-3">
+          Key Highlights &amp; Essential Coverage
+        </h2>
+        <div class="w-16 h-1 bg-amber-400 mx-auto mt-4 rounded-full"></div>
+        <p class="text-slate-600 text-sm sm:text-base mt-4">
+          Eliminate ambiguity and prevent costly courtroom disputes. Master the intricate real-estate landscape of Jharkhand with pinpoint guidance.
+        </p>
+      </div>
+
+      <!-- 2x2 Grid Layout -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
+        
+        <!-- Feature 1: Land Laws & Procedures -->
+        <div class="bg-white rounded-2xl p-8 border border-slate-200 hover:border-emerald-500 hover:shadow-xl transition-all duration-300 group flex items-start gap-5">
+          <div class="w-14 h-14 rounded-xl bg-emerald-50 border border-emerald-200 text-brand-forest flex-shrink-0 flex items-center justify-center group-hover:bg-brand-forest group-hover:text-amber-300 transition-colors">
+            <!-- SVG Icon: Scale of Justice / Gavel -->
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3" />
+            </svg>
+          </div>
+          <div>
+            <h3 class="text-xl font-bold text-brand-dark mb-2 group-hover:text-brand-forest transition-colors">
+              Land Laws &amp; Procedures
+            </h3>
+            <p class="text-slate-600 text-sm leading-relaxed">
+              Exhaustive analysis of the Chota Nagpur Tenancy (CNT) Act 1908, Santhal Parganas Tenancy (SPT) Act 1949, tribal land transfer restrictions, non-tribal permissions, and statutory land tenancy codes.
+            </p>
+            <div class="mt-3 flex flex-wrap gap-2">
+              <span class="text-[11px] font-semibold bg-slate-100 text-slate-700 px-2 py-0.5 rounded">CNT Act Sec 46 &amp; 49</span>
+              <span class="text-[11px] font-semibold bg-slate-100 text-slate-700 px-2 py-0.5 rounded">SPT Regulations</span>
+              <span class="text-[11px] font-semibold bg-slate-100 text-slate-700 px-2 py-0.5 rounded">Tribal Land Rulings</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Feature 2: Property Buying & Selling Guidelines -->
+        <div class="bg-white rounded-2xl p-8 border border-slate-200 hover:border-emerald-500 hover:shadow-xl transition-all duration-300 group flex items-start gap-5">
+          <div class="w-14 h-14 rounded-xl bg-emerald-50 border border-emerald-200 text-brand-forest flex-shrink-0 flex items-center justify-center group-hover:bg-brand-forest group-hover:text-amber-300 transition-colors">
+            <!-- SVG Icon: Shield Check / Safe Trade -->
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+            </svg>
+          </div>
+          <div>
+            <h3 class="text-xl font-bold text-brand-dark mb-2 group-hover:text-brand-forest transition-colors">
+              Property Buying &amp; Selling Guidelines
+            </h3>
+            <p class="text-slate-600 text-sm leading-relaxed">
+              Step-by-step buyer and seller due-diligence protocols. How to inspect physical possession, prevent overlapping registry fraud, and verify historical lineage to protect investments.
+            </p>
+            <div class="mt-3 flex flex-wrap gap-2">
+              <span class="text-[11px] font-semibold bg-slate-100 text-slate-700 px-2 py-0.5 rounded">Possession Verification</span>
+              <span class="text-[11px] font-semibold bg-slate-100 text-slate-700 px-2 py-0.5 rounded">Title Search (30 Yrs)</span>
+              <span class="text-[11px] font-semibold bg-slate-100 text-slate-700 px-2 py-0.5 rounded">RERA Compliance</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Feature 3: Documents & Registration Process -->
+        <div class="bg-white rounded-2xl p-8 border border-slate-200 hover:border-emerald-500 hover:shadow-xl transition-all duration-300 group flex items-start gap-5">
+          <div class="w-14 h-14 rounded-xl bg-emerald-50 border border-emerald-200 text-brand-forest flex-shrink-0 flex items-center justify-center group-hover:bg-brand-forest group-hover:text-amber-300 transition-colors">
+            <!-- SVG Icon: Official Document with Stamp -->
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+            </svg>
+          </div>
+          <div>
+            <h3 class="text-xl font-bold text-brand-dark mb-2 group-hover:text-brand-forest transition-colors">
+              Documents &amp; Registration Process
+            </h3>
+            <p class="text-slate-600 text-sm leading-relaxed">
+              Complete checklist of Khatiyan (Survey Records), Jamabandi, Register-II, Dakhil-Kharij (Mutation), online Jharbhoomi portal filing, stamp duty computation, and sub-registrar formalities.
+            </p>
+            <div class="mt-3 flex flex-wrap gap-2">
+              <span class="text-[11px] font-semibold bg-slate-100 text-slate-700 px-2 py-0.5 rounded">Khatiyan &amp; Register-II</span>
+              <span class="text-[11px] font-semibold bg-slate-100 text-slate-700 px-2 py-0.5 rounded">Dakhil-Kharij (Mutation)</span>
+              <span class="text-[11px] font-semibold bg-slate-100 text-slate-700 px-2 py-0.5 rounded">Jharbhoomi Workflow</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Feature 4: Legal Clarity & Practical Solutions -->
+        <div class="bg-white rounded-2xl p-8 border border-slate-200 hover:border-emerald-500 hover:shadow-xl transition-all duration-300 group flex items-start gap-5">
+          <div class="w-14 h-14 rounded-xl bg-emerald-50 border border-emerald-200 text-brand-forest flex-shrink-0 flex items-center justify-center group-hover:bg-brand-forest group-hover:text-amber-300 transition-colors">
+            <!-- SVG Icon: Lightbulb / Puzzle Resolution -->
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+            </svg>
+          </div>
+          <div>
+            <h3 class="text-xl font-bold text-brand-dark mb-2 group-hover:text-brand-forest transition-colors">
+              Legal Clarity &amp; Practical Solutions
+            </h3>
+            <p class="text-slate-600 text-sm leading-relaxed">
+              Real-world remedies for disputed mutation orders, Bakasht &amp; Gair Mazarua land queries, ancestral partition suits, revenue appeal procedures, and landmark High Court judgments.
+            </p>
+            <div class="mt-3 flex flex-wrap gap-2">
+              <span class="text-[11px] font-semibold bg-slate-100 text-slate-700 px-2 py-0.5 rounded">Gair Mazarua Clarifications</span>
+              <span class="text-[11px] font-semibold bg-slate-100 text-slate-700 px-2 py-0.5 rounded">Appeals &amp; Revisions</span>
+              <span class="text-[11px] font-semibold bg-slate-100 text-slate-700 px-2 py-0.5 rounded">High Court Precedents</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- 5. AUTHOR PROFILE SECTION -->
+  <section id="author" class="py-20 lg:py-28 bg-white relative overflow-hidden">
+    <!-- Subtle background accent -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="bg-gradient-to-br from-brand-dark via-brand-forest to-emerald-950 rounded-3xl text-white p-8 sm:p-12 lg:p-16 shadow-2xl relative overflow-hidden border border-amber-400/20">
+        
+        <!-- Decorative background shapes -->
+        <div class="absolute -right-20 -bottom-20 w-80 h-80 bg-amber-400/10 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute -left-20 -top-20 w-80 h-80 bg-emerald-400/10 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center relative z-10">
+          
+          <!-- Author Photo Placeholder -->
+          <div class="lg:col-span-4 flex flex-col items-center text-center">
+            <div class="relative group">
+              <!-- Golden halo frame -->
+              <div class="absolute -inset-1.5 bg-gradient-to-tr from-amber-400 to-amber-200 rounded-2xl blur-sm opacity-70 group-hover:opacity-100 transition duration-300"></div>
+              
+              <!-- Author Portrait Card -->
+              <div class="relative w-56 h-64 sm:w-64 sm:h-72 rounded-2xl bg-gradient-to-b from-slate-800 to-brand-dark border-2 border-amber-400/60 overflow-hidden flex flex-col items-center justify-center p-6 shadow-xl">
+                
+                <!-- Silhouette / Portrait Placeholder SVG -->
+                <div class="w-28 h-28 rounded-full bg-emerald-900/80 border-2 border-amber-300/40 flex items-center justify-center text-amber-300 mb-4 shadow-inner">
+                  <svg class="w-16 h-16 text-amber-200/80" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 12c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm0 2c-3.33 0-10 1.67-10 5v3h20v-3c0-3.33-6.67-5-10-5z" />
+                  </svg>
+                </div>
+
+                <span class="text-xs font-semibold tracking-wider text-amber-300 uppercase">Senior Jurist &amp; Author</span>
+                <span class="font-serif font-bold text-lg text-white mt-1">Salendra Kumar Verma</span>
+                <span class="text-[11px] text-emerald-200/80 mt-0.5">Ranchi, Jharkhand</span>
+              </div>
+            </div>
+
+            <!-- Credentials Pill -->
+            <div class="mt-4 flex items-center gap-2 text-xs text-amber-200/90 bg-emerald-950/60 border border-amber-400/30 px-3 py-1.5 rounded-full">
+              <svg class="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"/><path fill-rule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z" clip-rule="evenodd"/></svg>
+              <span>30+ Years Legal Practice</span>
+            </div>
+          </div>
+
+          <!-- Author Biography -->
+          <div class="lg:col-span-8 space-y-5 text-center lg:text-left">
+            <div>
+              <span class="text-xs font-bold uppercase tracking-widest text-amber-400 bg-amber-400/10 px-3 py-1 rounded-full border border-amber-400/20">
+                About the Author
+              </span>
+              <h2 class="font-serif text-3xl sm:text-4xl font-extrabold text-white mt-3">
+                Salendra Kumar Verma
+              </h2>
+              <p class="text-amber-300 font-medium text-sm mt-1">
+                Foremost Authority on Jharkhand Land Revenue Laws, Tenancy Acts &amp; Property Litigation
+              </p>
+            </div>
+
+            <p class="text-slate-200 text-sm sm:text-base leading-relaxed">
+              <strong>Salendra Kumar Verma</strong> is a veteran legal practitioner, consultant, and trusted authority on Jharkhand’s intricate land tenure jurisprudence. Over three decades of courtroom advocacy and administrative practice, he has resolved hundreds of high-stakes land title conflicts, contested mutations, and tribal tenancy disputes across Ranchi, Dhanbad, Jamshedpur, Bokaro, and the Santhal Pargana division.
+            </p>
+
+            <p class="text-slate-300 text-sm leading-relaxed">
+              His mission with <em>"Land Manual of Jharkhand"</em> is to distill dense statutory jargon into actionable, transparent guidance—protecting common citizens from property traps while giving advocates, corporate developers, and revenue officers an authoritative reference standard.
+            </p>
+
+            <!-- Key Badges -->
+            <div class="pt-3 grid grid-cols-2 sm:grid-cols-3 gap-4 border-t border-emerald-800/80">
+              <div class="p-3 rounded-xl bg-emerald-900/40 border border-emerald-700/50">
+                <span class="block text-2xl font-black text-amber-300">5,000+</span>
+                <span class="text-xs text-slate-300">Title Searches &amp; Vettings</span>
+              </div>
+              <div class="p-3 rounded-xl bg-emerald-900/40 border border-emerald-700/50">
+                <span class="block text-2xl font-black text-amber-300">24 Districts</span>
+                <span class="text-xs text-slate-300">Jharkhand Jurisdiction</span>
+              </div>
+              <div class="p-3 rounded-xl bg-emerald-900/40 border border-emerald-700/50 col-span-2 sm:col-span-1">
+                <span class="block text-2xl font-black text-amber-300">100% Legal</span>
+                <span class="text-xs text-slate-300">Precedent Backed</span>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- FINAL PRE-ORDER CONVERSION BANNER -->
+  <section class="py-14 bg-gradient-to-r from-amber-500 via-amber-400 to-amber-500 text-brand-dark">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center sm:flex sm:items-center sm:justify-between">
+      <div class="mb-6 sm:mb-0 text-left">
+        <h3 class="font-display font-extrabold text-2xl sm:text-3xl tracking-tight">
+          Secure Your Copy Today
+        </h3>
+        <p class="text-sm font-semibold text-brand-dark/90 mt-1">
+          Lock in official release pricing with instant digital or door-step physical dispatch.
+        </p>
+      </div>
+      <a href="#hero-checkout" class="inline-flex items-center justify-center px-8 py-3.5 bg-brand-dark text-white hover:bg-brand-forest font-bold text-base rounded-full shadow-xl hover:scale-105 active:scale-95 transition-all">
+        <span>Claim Your Copy Now</span>
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+        </svg>
+      </a>
+    </div>
+  </section>
+
+
+  <!-- 6. FOOTER -->
+  <footer class="bg-brand-dark text-slate-300 pt-16 pb-12 border-t border-emerald-950">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-8 pb-12 border-b border-emerald-900/40">
+        
+        <!-- Brand & Description -->
+        <div class="md:col-span-6 space-y-4">
+          <div class="flex items-center gap-3">
+            <div class="w-9 h-9 rounded-lg bg-emerald-800 flex items-center justify-center text-amber-300">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+              </svg>
+            </div>
+            <span class="font-display font-bold text-lg text-white">
+              Land Manual of Jharkhand
+            </span>
+          </div>
+
+          <p class="text-xs sm:text-sm text-slate-400 max-w-md leading-relaxed">
+            "झारखंड में भूमि खरीद-बिक्री का पूर्ण मार्गदर्शक" — The essential legal compendium for property owners, buyers, advocates, builders, and land revenue professionals across all 24 districts of Jharkhand.
+          </p>
+
+          <p class="text-xs text-amber-400/80 font-medium">
+            Authored by: Salendra Kumar Verma
+          </p>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="md:col-span-3 space-y-3">
+          <h4 class="text-xs font-bold uppercase tracking-wider text-white">
+            Navigation
+          </h4>
+          <ul class="space-y-2 text-xs sm:text-sm text-slate-400">
+            <li><a href="#hero-checkout" class="hover:text-amber-300 transition">Book Formats &amp; Pricing</a></li>
+            <li><a href="#benefits" class="hover:text-amber-300 transition">Format Benefits</a></li>
+            <li><a href="#features" class="hover:text-amber-300 transition">CNT &amp; SPT Act Highlights</a></li>
+            <li><a href="#author" class="hover:text-amber-300 transition">About Salendra Kumar Verma</a></li>
+          </ul>
+        </div>
+
+        <!-- Support & Legal Links -->
+        <div class="md:col-span-3 space-y-3">
+          <h4 class="text-xs font-bold uppercase tracking-wider text-white">
+            Assistance &amp; Legal
+          </h4>
+          <ul class="space-y-2 text-xs sm:text-sm text-slate-400">
+            <li><a href="#contact" onclick="openModal('Contact Us', 'For bulk orders, institutional licenses, or queries, please email us at support@landmanualjharkhand.com or call our publication desk at +91 94311 00000 (Ranchi).')" class="hover:text-amber-300 transition">Contact Us</a></li>
+            <li><a href="#privacy" onclick="openModal('Privacy Policy', 'Your contact details and order data are confidential and encrypted. We will never share or sell your details to third parties.')" class="hover:text-amber-300 transition">Privacy Policy</a></li>
+            <li><a href="#terms" onclick="openModal('Terms & Conditions', 'All purchases are covered under our dispatch guarantee. Digital editions are delivered instantly; physical copies are insured during transit.')" class="hover:text-amber-300 transition">Terms &amp; Conditions</a></li>
+            <li><span class="text-xs text-emerald-400/90 block pt-1">Helpline: Ranchi, Jharkhand</span></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Copyright Bar -->
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400 gap-4 text-center sm:text-left">
+        <p>© 2026 Land Manual of Jharkhand. All rights reserved.</p>
+        <p class="text-slate-500">
+          Designed with pride for the people &amp; legal fraternity of Jharkhand.
+        </p>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- SIMPLE INTERACTION MODAL (for Contact, Privacy, Terms & Pre-Order) -->
+  <div id="info-modal" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm hidden items-center justify-center p-4">
+    <div class="bg-white rounded-2xl max-w-md w-full p-6 shadow-2xl relative border border-slate-200 animate-in fade-in zoom-in-95 duration-200">
+      <button onclick="closeModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600 p-1">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+      <h3 id="modal-title" class="font-display font-bold text-xl text-brand-dark mb-3">Notice</h3>
+      <p id="modal-body" class="text-sm text-slate-600 leading-relaxed mb-6"></p>
+      <div class="flex justify-end">
+        <button onclick="closeModal()" class="px-5 py-2 text-xs font-bold text-white bg-brand-forest rounded-lg hover:bg-brand-dark transition">
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- JAVASCRIPT FOR DYNAMIC FORMAT SELECTION & CHECKOUT FLOW -->
+  <script>
+    let currentFormat = {
+      id: 'physical',
+      name: 'Physical Book (Hardcopy)',
+      price: '₹799',
+      note: 'Dispatch begins next Monday. Free shipping anywhere in Jharkhand & India.'
+    };
+
+    function updateFormatSelection(formatId, name, price, note) {
+      currentFormat = { id: formatId, name, price, note };
+
+      // Update button text
+      const btnText = document.getElementById('btn-text');
+      if (btnText) {
+        btnText.innerText = `Pre-Order ${name.split(' ')[0]} (${price})`;
+      }
+
+      // Update note
+      const formatNote = document.getElementById('format-note');
+      if (formatNote) {
+        formatNote.innerHTML = `
+          <svg class="w-4 h-4 text-emerald-600 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd" />
+          </svg>
+          <span>${note}</span>
+        `;
+      }
+
+      // Update styling of all format cards
+      const cards = document.querySelectorAll('.format-card');
+      cards.forEach(card => {
+        const input = card.querySelector('input');
+        const indicator = card.querySelector('.selection-indicator');
+        const badge = card.querySelector('.active-badge');
+
+        if (input && input.value === formatId) {
+          card.classList.add('border-brand-forest', 'border-2', 'shadow-md');
+          card.classList.remove('border-slate-200', 'border');
+          if (indicator) {
+            indicator.className = 'selection-indicator w-5 h-5 rounded-full border-2 border-brand-forest bg-brand-forest flex items-center justify-center text-white';
+            indicator.innerHTML = '<svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>';
+          }
+        } else {
+          card.classList.remove('border-brand-forest', 'border-2', 'shadow-md');
+          card.classList.add('border-slate-200', 'border');
+          if (indicator) {
+            indicator.className = 'selection-indicator w-5 h-5 rounded-full border-2 border-slate-300 flex items-center justify-center text-white';
+            indicator.innerHTML = '';
+          }
+        }
+      });
+    }
+
+    function selectFormatByCard(formatId) {
+      const radio = document.querySelector(`input[name="book_format"][value="${formatId}"]`);
+      if (radio) {
+        radio.checked = true;
+        radio.dispatchEvent(new Event('change'));
+      }
+    }
+
+    function handlePreOrderAction() {
+      openModal(
+        'Confirming Pre-Order', 
+        `You have selected the "${currentFormat.name}" for ${currentFormat.price}. \n\nYour discount has been locked in! In the live deployment, this seamlessly routes to your preferred checkout gateway (UPI, Card, NetBanking or Cash On Delivery for physical books).`
+      );
+    }
+
+    function openModal(title, message) {
+      const modal = document.getElementById('info-modal');
+      document.getElementById('modal-title').innerText = title;
+      document.getElementById('modal-body').innerText = message;
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    }
+
+    function closeModal() {
+      const modal = document.getElementById('info-modal');
+      modal.classList.remove('flex');
+      modal.classList.add('hidden');
+    }
+
+    // Close modal on Escape key
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeModal();
+    });
+  </script>
+
+</body>
+</html>
