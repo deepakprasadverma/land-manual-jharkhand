@@ -1,0 +1,13 @@
+{
+  "name": "land-manual-jharkhand",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Land Manual of Jharkhand Landing Page & Order API",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx serve ."
+  },
+  "keywords": ["land-manual", "jharkhand", "book-landing-page"],
+  "author": "Salendra Kumar Verma & Deepak Prasad Verma",
+  "license": "ISC"
+}
