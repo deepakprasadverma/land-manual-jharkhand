@@ -54,7 +54,7 @@ export default async function handler(req, res) {
             deliveryInfo = {
                 type: 'physical_shipping',
                 shippingEstimate: '3-5 business days across Jharkhand & India',
-                trackingNote: 'Courier tracking ID will be sent to your WhatsApp number within 24 hours.'
+                trackingNote: 'Courier tracking ID will be sent to your WhatsApp number (+91 7543005549) within 24 hours.'
             };
         }
 
@@ -69,7 +69,7 @@ export default async function handler(req, res) {
             },
             order: {
                 format,
-                price: price || (format === 'ebook' ? '₹349' : format === 'audiobook' ? '₹499' : '₹699'),
+                price: price || '₹449',
                 paymentMethod,
                 status: 'Confirmed'
             },

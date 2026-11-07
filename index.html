@@ -175,7 +175,7 @@
                             
                             <!-- 1. Physical Book Card -->
                             <div onclick="selectFormat('physical')" id="card-physical" class="format-card cursor-pointer relative rounded-xl p-4 transition-all duration-200 bg-forest-950/80 border-2 border-gold-400 shadow-lg shadow-gold-500/10">
-                                <div class="absolute -top-2.5 right-3 px-2 py-0.5 rounded-full text-[10px] font-extrabold uppercase tracking-wider bg-gold-400 text-forest-950">
+                                <div class="absolute -top-2.5 right-3 px-2 py-0.5 rounded-full text-xs font-extrabold uppercase tracking-wider bg-gold-400 text-forest-950">
                                     Bestseller
                                 </div>
                                 <div class="flex items-center gap-3">
@@ -190,13 +190,19 @@
                                     </div>
                                 </div>
                                 <div class="mt-3 pt-2 border-t border-forest-800/80 flex items-baseline justify-between">
-                                    <span class="text-base font-extrabold text-gold-300">₹699</span>
-                                    <span class="text-[11px] text-emerald-400 font-semibold">Free Delivery</span>
+                                    <div class="flex items-baseline gap-2">
+                                        <span class="text-lg font-black text-gold-300">₹449</span>
+                                        <span class="text-xs text-slate-400 line-through">₹699</span>
+                                    </div>
+                                    <span class="text-xs text-emerald-400 font-bold">Free Delivery</span>
                                 </div>
                             </div>
 
-                            <!-- 2. E-Book Card -->
-                            <div onclick="selectFormat('ebook')" id="card-ebook" class="format-card cursor-pointer relative rounded-xl p-4 transition-all duration-200 bg-forest-950/40 border-2 border-forest-700/60 hover:border-forest-600">
+                            <!-- 2. E-Book Card (Coming Soon) -->
+                            <div onclick="selectFormat('ebook')" id="card-ebook" class="format-card cursor-pointer relative rounded-xl p-4 transition-all duration-200 bg-forest-950/40 border-2 border-forest-700/60 hover:border-forest-600 opacity-90">
+                                <div class="absolute -top-2.5 right-3 px-2 py-0.5 rounded-full text-xs font-bold uppercase tracking-wider bg-amber-400/20 text-amber-300 border border-amber-400/40">
+                                    Coming Soon
+                                </div>
                                 <div class="flex items-center gap-3">
                                     <div class="w-10 h-10 rounded-lg bg-forest-800/80 flex items-center justify-center text-forest-200 shrink-0">
                                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -205,17 +211,20 @@
                                     </div>
                                     <div class="overflow-hidden">
                                         <h3 class="font-bold text-sm text-white truncate">E-Book</h3>
-                                        <p class="text-xs text-forest-200 truncate">PDF & ePub</p>
+                                        <p class="text-xs text-forest-200 truncate">PDF &amp; ePub</p>
                                     </div>
                                 </div>
                                 <div class="mt-3 pt-2 border-t border-forest-800/80 flex items-baseline justify-between">
-                                    <span class="text-base font-extrabold text-white">₹349</span>
-                                    <span class="text-[11px] text-amber-300 font-semibold">Instant Download</span>
+                                    <span class="text-sm font-extrabold text-amber-300">Coming Soon</span>
+                                    <span class="text-xs text-slate-400">Digital Access</span>
                                 </div>
                             </div>
 
-                            <!-- 3. Audiobook Card -->
-                            <div onclick="selectFormat('audiobook')" id="card-audiobook" class="format-card cursor-pointer relative rounded-xl p-4 transition-all duration-200 bg-forest-950/40 border-2 border-forest-700/60 hover:border-forest-600">
+                            <!-- 3. Audiobook Card (Coming Soon) -->
+                            <div onclick="selectFormat('audiobook')" id="card-audiobook" class="format-card cursor-pointer relative rounded-xl p-4 transition-all duration-200 bg-forest-950/40 border-2 border-forest-700/60 hover:border-forest-600 opacity-90">
+                                <div class="absolute -top-2.5 right-3 px-2 py-0.5 rounded-full text-xs font-bold uppercase tracking-wider bg-amber-400/20 text-amber-300 border border-amber-400/40">
+                                    Coming Soon
+                                </div>
                                 <div class="flex items-center gap-3">
                                     <div class="w-10 h-10 rounded-lg bg-forest-800/80 flex items-center justify-center text-forest-200 shrink-0">
                                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -228,8 +237,8 @@
                                     </div>
                                 </div>
                                 <div class="mt-3 pt-2 border-t border-forest-800/80 flex items-baseline justify-between">
-                                    <span class="text-base font-extrabold text-white">₹499</span>
-                                    <span class="text-[11px] text-blue-300 font-semibold">Listen on Any Device</span>
+                                    <span class="text-sm font-extrabold text-amber-300">Coming Soon</span>
+                                    <span class="text-xs text-slate-400">Audio Chapters</span>
                                 </div>
                             </div>
 
@@ -242,7 +251,7 @@
                             <svg class="w-6 h-6 mr-2.5 text-forest-950" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/>
                             </svg>
-                            <span id="btnText">Pre-Order Physical Book (₹699)</span>
+                            <span id="btnText">Pre-Order Physical Book (₹449)</span>
                         </button>
                         
                         <div class="flex items-center justify-center gap-2 text-xs text-forest-200">
@@ -334,10 +343,10 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
                         </svg>
                     </div>
-                    <span class="text-xs font-bold uppercase tracking-wider text-emerald-700 bg-emerald-100/70 px-2.5 py-1 rounded-md">Digital Edition</span>
-                    <h4 class="text-xl font-bold font-serif text-forest-950 mt-3 mb-2">Instant Access</h4>
+                    <span class="text-xs font-bold uppercase tracking-wider text-amber-700 bg-amber-100 px-2.5 py-1 rounded-md">Coming Soon</span>
+                    <h4 class="text-xl font-bold font-serif text-forest-950 mt-3 mb-2">Instant Access (E-Book)</h4>
                     <p class="text-slate-600 leading-relaxed text-sm">
-                        Read instantly on your mobile, tablet, or PC. Search key legal terms, bookmark critical clauses, and keep an offline copy in your pocket on registry days.
+                        Digital edition is coming soon! You will be able to read instantly on your mobile, tablet, or PC, with full-text searchability and offline access.
                     </p>
                     <ul class="mt-5 space-y-2 text-xs text-slate-500">
                         <li class="flex items-center gap-2">
@@ -359,10 +368,10 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"/>
                         </svg>
                     </div>
-                    <span class="text-xs font-bold uppercase tracking-wider text-amber-700 bg-amber-100/70 px-2.5 py-1 rounded-md">Audio Edition</span>
-                    <h4 class="text-xl font-bold font-serif text-forest-950 mt-3 mb-2">Listen Anywhere</h4>
+                    <span class="text-xs font-bold uppercase tracking-wider text-amber-700 bg-amber-100 px-2.5 py-1 rounded-md">Coming Soon</span>
+                    <h4 class="text-xl font-bold font-serif text-forest-950 mt-3 mb-2">Listen Anywhere (Audiobook)</h4>
                     <p class="text-slate-600 leading-relaxed text-sm">
-                        Professionally narrated, perfect for commuting. Understand complex revenue terminology explained in lucid Hindi and English while driving or traveling.
+                        Audiobook edition is coming soon! Professionally narrated, perfect for commuting. Complex revenue terminology explained in lucid Hindi and English.
                     </p>
                     <ul class="mt-5 space-y-2 text-xs text-slate-500">
                         <li class="flex items-center gap-2">
@@ -384,8 +393,8 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
                         </svg>
                     </div>
-                    <span class="text-xs font-bold uppercase tracking-wider text-forest-800 bg-forest-100 px-2.5 py-1 rounded-md">Hardcopy Edition</span>
-                    <h4 class="text-xl font-bold font-serif text-forest-950 mt-3 mb-2">Premium Print</h4>
+                    <span class="text-xs font-bold uppercase tracking-wider text-forest-800 bg-forest-100 px-2.5 py-1 rounded-md">Now Available • ₹449</span>
+                    <h4 class="text-xl font-bold font-serif text-forest-950 mt-3 mb-2">Premium Print (Physical Book)</h4>
                     <p class="text-slate-600 leading-relaxed text-sm">
                         High-quality paperback for your personal library. Features durable binding, crisp archival-grade paper, and dedicated margins for field notes and stamp annotations.
                     </p>
@@ -567,11 +576,22 @@
                     </ul>
                 </div>
                 <div>
-                    <h5 class="text-xs font-bold uppercase tracking-wider text-gold-300 mb-3">Support &amp; Legal</h5>
+                    <h5 class="text-xs font-bold uppercase tracking-wider text-gold-300 mb-3">Support &amp; Contact Us</h5>
                     <ul class="space-y-2 text-xs">
-                        <li><a href="#contact" onclick="alert('Contact Helpdesk: support@landmanualjharkhand.in'); return false;" class="hover:text-gold-400 transition-colors">Contact Us</a></li>
-                        <li><a href="#privacy" onclick="alert('Privacy Policy: We do not share customer data with third parties.'); return false;" class="hover:text-gold-400 transition-colors">Privacy Policy</a></li>
-                        <li><a href="#terms" onclick="alert('Terms & Conditions: Published for informational and reference purposes.'); return false;" class="hover:text-gold-400 transition-colors">Terms &amp; Conditions</a></li>
+                        <li class="flex items-center gap-2 text-white">
+                            <svg class="w-4 h-4 text-emerald-400 shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                            </svg>
+                            <a href="tel:+917543005549" class="hover:text-gold-300 font-semibold tracking-wide">+91 7543005549</a>
+                        </li>
+                        <li>
+                            <a href="https://wa.me/917543005549?text=Namaste,%20mujhe%20Land%20Manual%20of%20Jharkhand%20book%20ke%20bare%20mein%20jankari%20chahiye" target="_blank" class="inline-flex items-center gap-1.5 text-emerald-400 hover:text-emerald-300 font-semibold transition-colors">
+                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+                                <span>WhatsApp: +91 7543005549</span>
+                            </a>
+                        </li>
+                        <li><a href="#privacy" onclick="alert('Privacy Policy: Customer data is 100% confidential.'); return false;" class="hover:text-gold-400 transition-colors">Privacy Policy</a></li>
+                        <li><a href="#terms" onclick="alert('Terms & Conditions: For legal and informational reference.'); return false;" class="hover:text-gold-400 transition-colors">Terms &amp; Conditions</a></li>
                     </ul>
                 </div>
             </div>
@@ -619,9 +639,9 @@
                 <div class="pt-2">
                     <button type="submit" id="submitOrderBtn" class="w-full py-3.5 rounded-xl bg-forest-900 hover:bg-forest-800 text-gold-300 font-bold text-sm tracking-wide shadow-md transition-colors flex items-center justify-center gap-2">
                         <span id="submitBtnText">Complete Order Now</span>
-                        <span id="modalPriceBadge" class="bg-gold-400 text-forest-950 px-2 py-0.5 rounded text-xs font-bold">₹699</span>
+                        <span id="modalPriceBadge" class="bg-gold-400 text-forest-950 px-2.5 py-0.5 rounded text-xs font-bold">₹449</span>
                     </button>
-                    <p class="text-[11px] text-center text-slate-400 mt-2">Cash on Delivery &amp; UPI available • Instant Digital Access for E-Books</p>
+                    <p class="text-[11px] text-center text-slate-400 mt-2">Cash on Delivery &amp; UPI available • Free Delivery across India</p>
                 </div>
             </form>
         </div>
@@ -650,7 +670,7 @@
             <div class="my-5 p-4 rounded-xl bg-slate-50 border border-slate-200 text-xs space-y-2 text-slate-700">
                 <div class="flex justify-between border-b border-slate-200 pb-2">
                     <span class="text-slate-500">Edition / Format:</span>
-                    <span class="font-bold text-forest-950" id="successFormat">Physical Book</span>
+                    <span class="font-bold text-forest-950" id="successFormat">Physical Book (Hardcopy)</span>
                 </div>
                 <div class="flex justify-between border-b border-slate-200 pb-2">
                     <span class="text-slate-500">Customer:</span>
@@ -658,7 +678,7 @@
                 </div>
                 <div class="flex justify-between border-b border-slate-200 pb-2">
                     <span class="text-slate-500">Amount:</span>
-                    <span class="font-bold text-emerald-700 text-sm" id="successPrice">₹699</span>
+                    <span class="font-bold text-emerald-700 text-sm" id="successPrice">₹449</span>
                 </div>
                 <div class="flex justify-between">
                     <span class="text-slate-500">Payment Status:</span>
@@ -666,7 +686,7 @@
                 </div>
             </div>
 
-            <!-- Dynamic Delivery Action (Digital Download vs Physical Delivery) -->
+            <!-- Dynamic Delivery Action -->
             <div id="digitalDeliverySection" class="hidden my-4 p-4 rounded-xl bg-amber-50 border border-amber-200 text-center">
                 <span class="text-xs font-bold uppercase tracking-wider text-amber-800 block mb-1">🎉 Instant Access Unlocked!</span>
                 <p class="text-xs text-slate-600 mb-3" id="digitalInstructions">You can now download or stream your digital edition immediately.</p>
@@ -685,15 +705,15 @@
                     </svg>
                     <div>
                         <span class="font-bold block">Shipping &amp; Delivery:</span>
-                        <span>Your book will be safely packaged and dispatched within 24-48 hours. India Post / Courier Tracking ID will be sent on WhatsApp.</span>
+                        <span>Your book will be safely packaged and dispatched within 24-48 hours. India Post / Courier Tracking ID will be sent to your WhatsApp number (+91 7543005549).</span>
                     </div>
                 </div>
             </div>
 
             <!-- Footer Buttons in Modal -->
             <div class="flex flex-col sm:flex-row gap-3 pt-2">
-                <a id="whatsappSupportBtn" href="#" target="_blank" class="flex-1 inline-flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs shadow-sm transition-colors">
-                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                <a id="whatsappSupportBtn" href="https://wa.me/917543005549" target="_blank" class="flex-1 inline-flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold text-xs shadow-sm transition-colors">
+                    <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
                         <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/>
                     </svg>
                     <span>WhatsApp Order Update</span>
@@ -706,6 +726,107 @@
         </div>
     </div>
 
+    <!-- FLOATING WHATSAPP & AI CHATBOT WIDGET -->
+    <div id="aiChatbotContainer" class="fixed bottom-5 right-5 z-50 flex flex-col items-end">
+        
+        <!-- Chatbot Window (Initially Hidden) -->
+        <div id="aiChatWindow" class="hidden mb-3 w-[92vw] sm:w-96 rounded-2xl bg-white shadow-2xl border border-emerald-500/30 overflow-hidden flex flex-col animate-in fade-in slide-in-from-bottom-6 duration-200" style="max-height: 520px;">
+            
+            <!-- WhatsApp Chat Header -->
+            <div class="bg-gradient-to-r from-emerald-800 to-forest-950 p-4 text-white flex items-center justify-between shadow-sm">
+                <div class="flex items-center space-x-3">
+                    <div class="relative">
+                        <!-- WhatsApp Logo Icon Badge -->
+                        <div class="w-10 h-10 rounded-full bg-[#25D366] flex items-center justify-center text-white shadow-md">
+                            <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+                                <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/>
+                            </svg>
+                        </div>
+                        <span class="absolute bottom-0 right-0 w-3 h-3 bg-emerald-400 border-2 border-forest-950 rounded-full"></span>
+                    </div>
+                    <div>
+                        <div class="flex items-center gap-1.5">
+                            <h4 class="font-bold text-sm text-white">Land Manual AI Assistant</h4>
+                            <span class="text-[10px] bg-amber-400 text-forest-950 px-1.5 py-0.2 rounded font-extrabold uppercase">AI</span>
+                        </div>
+                        <p class="text-xs text-emerald-200">Online • Helpline: +91 7543005549</p>
+                    </div>
+                </div>
+                <button onclick="toggleAiChat()" class="text-emerald-200 hover:text-white p-1 rounded-lg hover:bg-white/10 transition-colors" aria-label="Close Chat">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+                </button>
+            </div>
+
+            <!-- Chat Messages Log Container -->
+            <div id="aiChatMessages" class="p-3.5 space-y-3 overflow-y-auto bg-slate-100 flex-1 text-xs" style="max-height: 270px;">
+                <!-- Initial Welcome Message from Bot -->
+                <div class="flex items-start gap-2">
+                    <div class="w-6 h-6 rounded-full bg-[#25D366] flex items-center justify-center text-white shrink-0 shadow-sm text-[10px] font-bold">
+                        AI
+                    </div>
+                    <div class="bg-white p-3 rounded-2xl rounded-tl-none shadow-sm border border-slate-200 text-slate-800 space-y-1.5 max-w-[88%]">
+                        <p class="font-bold text-forest-950">Namaste! 🙏 Welcome to Land Manual of Jharkhand.</p>
+                        <p>Main aapka AI Assistant hoon. Aap mujhse book ya Jharkhand bhoomi kanoon ke bare mein pooch sakte hain:</p>
+                        <ul class="text-[11px] text-slate-600 list-disc list-inside space-y-0.5">
+                            <li><strong>Physical Book Price:</strong> ₹449/- (Free Delivery)</li>
+                            <li><strong>E-Book &amp; Audiobook:</strong> Coming Soon</li>
+                            <li><strong>Laws Covered:</strong> CNT, SPT, Mutation, Khatian</li>
+                        </ul>
+                        <p class="text-[10px] text-slate-400 pt-1 border-t border-slate-100">WhatsApp / Call: +91 7543005549</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Action Suggestion Chips -->
+            <div class="p-2 bg-white border-t border-slate-200 flex flex-wrap gap-1.5">
+                <button onclick="sendQuickPrompt('Book Price aur Delivery detail?')" class="text-[11px] bg-slate-100 hover:bg-forest-100 text-forest-900 border border-slate-200 rounded-full px-2.5 py-1 transition-colors">
+                    💰 Price: ₹449?
+                </button>
+                <button onclick="sendQuickPrompt('E-Book kab aayegi?')" class="text-[11px] bg-slate-100 hover:bg-forest-100 text-forest-900 border border-slate-200 rounded-full px-2.5 py-1 transition-colors">
+                    📱 E-Book / Audio?
+                </button>
+                <button onclick="sendQuickPrompt('CNT aur SPT Act ke bare mein kya hai?')" class="text-[11px] bg-slate-100 hover:bg-forest-100 text-forest-900 border border-slate-200 rounded-full px-2.5 py-1 transition-colors">
+                    ⚖️ CNT/SPT Act?
+                </button>
+                <button onclick="sendQuickPrompt('Book Order kaise karein?')" class="text-[11px] bg-slate-100 hover:bg-forest-100 text-forest-900 border border-slate-200 rounded-full px-2.5 py-1 transition-colors">
+                    📦 Order Guide
+                </button>
+            </div>
+
+            <!-- User Chat Input Box -->
+            <form onsubmit="handleUserChat(event)" class="p-2.5 bg-white border-t border-slate-200 flex items-center gap-2">
+                <input type="text" id="aiChatInput" placeholder="Ask AI about book or land laws..." class="flex-1 px-3 py-2 text-xs rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-forest-600">
+                <button type="submit" class="w-8 h-8 rounded-xl bg-forest-900 hover:bg-forest-800 text-gold-300 flex items-center justify-center shrink-0">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/></svg>
+                </button>
+            </form>
+
+            <!-- Bottom WhatsApp Live Connect Bar -->
+            <a href="https://wa.me/917543005549?text=Namaste,%20mujhe%20Land%20Manual%20of%20Jharkhand%20book%20ke%20bare%20mein%20jankari%20chahiye" target="_blank" class="py-2.5 px-3 bg-[#25D366] hover:bg-[#20bd5a] text-white text-xs font-bold flex items-center justify-center gap-2 transition-colors">
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+                <span>Direct WhatsApp Chat (+91 7543005549)</span>
+            </a>
+
+        </div>
+
+        <!-- Floating WhatsApp Trigger Button with Pulsing Badge -->
+        <button onclick="toggleAiChat()" class="group flex items-center gap-2.5 px-4 py-3 rounded-full bg-gradient-to-r from-[#25D366] to-[#128C7E] text-white shadow-2xl hover:scale-105 active:scale-95 transition-all">
+            <!-- WhatsApp Icon -->
+            <div class="relative">
+                <svg class="w-7 h-7 fill-current" viewBox="0 0 24 24">
+                    <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/>
+                </svg>
+                <span class="absolute -top-1 -right-1 w-3 h-3 bg-amber-400 rounded-full animate-ping"></span>
+                <span class="absolute -top-1 -right-1 w-3 h-3 bg-amber-400 rounded-full"></span>
+            </div>
+            <div class="text-left hidden sm:block">
+                <span class="block text-xs font-black tracking-wide leading-tight">AI &amp; WhatsApp Chat</span>
+                <span class="block text-[10px] text-emerald-100 font-medium leading-none">+91 7543005549</span>
+            </div>
+        </button>
+
+    </div>
+
     <!-- JAVASCRIPT LOGIC -->
     <script>
         // State management for formats
@@ -713,31 +834,42 @@
             physical: {
                 id: 'physical',
                 title: 'Physical Book (Hardcopy)',
-                price: '₹699',
-                buttonText: 'Pre-Order Physical Book (₹699)',
-                requiresAddress: true
+                price: '₹449',
+                buttonText: 'Pre-Order Physical Book (₹449)',
+                requiresAddress: true,
+                available: true
             },
             ebook: {
                 id: 'ebook',
-                title: 'E-Book (Instant PDF/ePub Download)',
-                price: '₹349',
-                buttonText: 'Download E-Book Instantly (₹349)',
-                requiresAddress: false
+                title: 'E-Book (Digital Edition)',
+                price: 'Coming Soon',
+                buttonText: 'E-Book (Coming Soon)',
+                requiresAddress: false,
+                available: false
             },
             audiobook: {
                 id: 'audiobook',
-                title: 'Audiobook (Listen on the go)',
-                price: '₹499',
-                buttonText: 'Get Audiobook Access (₹499)',
-                requiresAddress: false
+                title: 'Audiobook (Audio Edition)',
+                price: 'Coming Soon',
+                buttonText: 'Audiobook (Coming Soon)',
+                requiresAddress: false,
+                available: false
             }
         };
 
         let currentFormat = 'physical';
 
         function selectFormat(formatKey) {
-            currentFormat = formatKey;
             const data = formatData[formatKey];
+
+            if (!data.available) {
+                alert(`📢 Notice: ${data.title} is Coming Soon!\n\nAbhi aap Physical Book (Hardcopy) sirf ₹449/- mein order kar sakte hain (Free Delivery across India).`);
+                // Keep physical book selected for buying
+                formatKey = 'physical';
+            }
+
+            currentFormat = formatKey;
+            const activeData = formatData[formatKey];
 
             // Update Cards Style
             ['physical', 'ebook', 'audiobook'].forEach(key => {
@@ -752,12 +884,18 @@
             });
 
             // Update CTA Button Text
-            document.getElementById('btnText').textContent = data.buttonText;
+            document.getElementById('btnText').textContent = activeData.buttonText;
         }
 
         // Modal Controls
         function handlePreOrder() {
             const data = formatData[currentFormat];
+            if (!data.available) {
+                alert("E-Book aur Audiobook jaldi hi Coming Soon hain! Abhi aap Physical Book (Hardcopy) ₹449/- mein order kar sakte hain.");
+                selectFormat('physical');
+                return;
+            }
+
             document.getElementById('modalFormatTitle').textContent = `Format: ${data.title}`;
             document.getElementById('modalPriceBadge').textContent = data.price;
             
@@ -839,9 +977,8 @@
                         customer: { name: custName, phone: custPhone, email: custEmail },
                         order: { format: currentFormat, price: data.price },
                         deliveryInfo: {
-                            type: currentFormat === 'ebook' ? 'digital_download' : currentFormat === 'audiobook' ? 'audio_stream' : 'physical_shipping',
-                            downloadUrl: '#',
-                            instructions: 'Download link confirmed.'
+                            type: 'physical_shipping',
+                            instructions: 'Courier tracking ID will be sent on WhatsApp (+91 7543005549).'
                         }
                     }
                 };
@@ -866,29 +1003,112 @@
 
             const digitalSec = document.getElementById('digitalDeliverySection');
             const physicalSec = document.getElementById('physicalDeliverySection');
-            const digitalBtn = document.getElementById('digitalDownloadBtn');
-            const digitalBtnText = document.getElementById('digitalBtnText');
 
-            if (currentFormat === 'ebook') {
-                digitalSec.classList.remove('hidden');
-                physicalSec.classList.add('hidden');
-                digitalBtnText.textContent = '📥 Download E-Book (PDF & ePub)';
-                digitalBtn.href = 'https://github.com/deepakprasadverma/land-manual-jharkhand';
-            } else if (currentFormat === 'audiobook') {
-                digitalSec.classList.remove('hidden');
-                physicalSec.classList.add('hidden');
-                digitalBtnText.textContent = '🎧 Start Listening to Audiobook';
-                digitalBtn.href = 'https://github.com/deepakprasadverma/land-manual-jharkhand';
-            } else {
-                digitalSec.classList.add('hidden');
-                physicalSec.classList.remove('hidden');
-            }
+            digitalSec.classList.add('hidden');
+            physicalSec.classList.remove('hidden');
 
-            // Setup WhatsApp direct connect link
-            const waMsg = encodeURIComponent(`Hello, I have placed an order for "Land Manual of Jharkhand" (${data.title}). Order ID: ${order.orderId || 'LMJ-2026'}. Please confirm my order.`);
-            document.getElementById('whatsappSupportBtn').href = `https://wa.me/919876543210?text=${waMsg}`;
+            // Setup WhatsApp direct connect link (+91 7543005549)
+            const waMsg = encodeURIComponent(`Hello, I have placed an order for "Land Manual of Jharkhand" (Physical Book - ₹449). Order ID: ${order.orderId || 'LMJ-2026'}. Please confirm my order.`);
+            document.getElementById('whatsappSupportBtn').href = `https://wa.me/917543005549?text=${waMsg}`;
 
             document.getElementById('orderSuccessModal').classList.remove('hidden');
+        }
+
+        // AI Chatbot with WhatsApp Logic
+        function toggleAiChat() {
+            const chatWin = document.getElementById('aiChatWindow');
+            chatWin.classList.toggle('hidden');
+            if (!chatWin.classList.contains('hidden')) {
+                document.getElementById('aiChatInput').focus();
+            }
+        }
+
+        function sendQuickPrompt(promptText) {
+            document.getElementById('aiChatInput').value = promptText;
+            handleUserChat(new Event('submit'));
+        }
+
+        function handleUserChat(e) {
+            if (e) e.preventDefault();
+            const input = document.getElementById('aiChatInput');
+            const text = input.value.trim();
+            if (!text) return;
+
+            const chatMessages = document.getElementById('aiChatMessages');
+
+            // Append User Message Bubble
+            const userMsgEl = document.createElement('div');
+            userMsgEl.className = 'flex items-start justify-end gap-2';
+            userMsgEl.innerHTML = `
+                <div class="bg-forest-900 text-white p-2.5 rounded-2xl rounded-tr-none shadow-sm max-w-[85%] text-xs">
+                    ${escapeHtml(text)}
+                </div>
+            `;
+            chatMessages.appendChild(userMsgEl);
+            input.value = '';
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+
+            // Generate AI Response based on Land Manual Knowledge Base
+            setTimeout(() => {
+                const botReply = generateAiResponse(text);
+                const botMsgEl = document.createElement('div');
+                botMsgEl.className = 'flex items-start gap-2';
+                botMsgEl.innerHTML = `
+                    <div class="w-6 h-6 rounded-full bg-[#25D366] flex items-center justify-center text-white shrink-0 shadow-sm text-[10px] font-bold">
+                        AI
+                    </div>
+                    <div class="bg-white p-3 rounded-2xl rounded-tl-none shadow-sm border border-slate-200 text-slate-800 space-y-1.5 max-w-[88%] text-xs">
+                        <p>${botReply}</p>
+                        <div class="pt-1.5 border-t border-slate-100 flex items-center justify-between">
+                            <a href="https://wa.me/917543005549?text=${encodeURIComponent('Hello, I asked AI: ' + text)}" target="_blank" class="text-[11px] font-bold text-emerald-700 hover:text-emerald-900 flex items-center gap-1">
+                                💬 WhatsApp par poochhein (+91 7543005549)
+                            </a>
+                        </div>
+                    </div>
+                `;
+                chatMessages.appendChild(botMsgEl);
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+            }, 400);
+        }
+
+        function generateAiResponse(query) {
+            const q = query.toLowerCase();
+
+            if (q.includes('price') || q.includes('cost') || q.includes('kimat') || q.includes('rupaye') || q.includes('kitna') || q.includes('kitne') || q.includes('rate')) {
+                return "📖 <strong>Land Manual of Jharkhand (Physical Book)</strong> ka special price sirf <strong>₹449/-</strong> hai (MRP ₹699) with <strong>Free Delivery</strong> all over Jharkhand & India! E-Book aur Audiobook jaldi hi Coming Soon hain.";
+            }
+            if (q.includes('ebook') || q.includes('e-book') || q.includes('pdf') || q.includes('download')) {
+                return "📱 <strong>E-Book (Digital PDF/ePub)</strong> edition abhi <strong>Coming Soon</strong> hai. Jaise hi live hoga aapko alert mil jayega. Abhi aap Physical Book sirf ₹449/- mein order kar sakte hain.";
+            }
+            if (q.includes('audio') || q.includes('audiobook') || q.includes('sunna')) {
+                return "🎧 <strong>Audiobook</strong> edition bhi abhi <strong>Coming Soon</strong> hai! Isme complete revenue laws ka saral Hindi audio narration hoga.";
+            }
+            if (q.includes('cnt') || q.includes('chota nagpur')) {
+                return "⚖️ <strong>CNT Act (1908):</strong> Is pustak mein Chota Nagpur Tenancy Act ke sabhi sections (visheshkar Sec 46, 49, 71A) aur adivasi/raiyati bhoomi ke hastantaran niyam saral Hindi mein samjhaye gaye hain.";
+            }
+            if (q.includes('spt') || q.includes('santhal')) {
+                return "⚖️ <strong>SPT Act (1949):</strong> Santhal Parganas Tenancy Act ke tahat bhoomi khareed-bikri ke kanooni niyam, Section 20 pratibandh aur DC permission ke bare mein poori jankari shamil hai.";
+            }
+            if (q.includes('mutation') || q.includes('dakhil') || q.includes('kharij') || q.includes('rashid')) {
+                return "📑 <strong>Dakhil-Kharij (Mutation):</strong> Manual mein Jharbhoomi portal par online aavedan, Khatian milan, Jamabandi sudhar, aur Circle Officer (CO) ya DCLR court appeal ke practical solutions diye gaye hain.";
+            }
+            if (q.includes('order') || q.includes('buy') || q.includes('kharid') || q.includes('kaise')) {
+                return "📦 <strong>Order Process:</strong> Upar diye gaye <strong>'Pre-Order Now'</strong> button par click karein, apna Naam, Mobile Number aur Address dalein. Physical Book sirf <strong>₹449/-</strong> mein Cash on Delivery ya UPI se mil jayegi.";
+            }
+            if (q.includes('contact') || q.includes('phone') || q.includes('call') || q.includes('number') || q.includes('whatsapp') || q.includes('helpline')) {
+                return "📞 <strong>Contact & Support:</strong> Aap direct call ya WhatsApp kar sakte hain: <strong>+91 7543005549</strong> par.";
+            }
+            if (q.includes('author') || q.includes('writer') || q.includes('salendra')) {
+                return "✍️ Pustak ke lekhak <strong>Salendra Kumar Verma</strong> ji hain, jo Jharkhand bhoomi rajashwa kanoon (Land Revenue Administration) ke jaane-maane vidwan hain.";
+            }
+
+            return "Dhanyawad! Is vishay par detail jankari pane ya direct book order confirm karne ke liye aap hamare WhatsApp number <strong>+91 7543005549</strong> par click karke direct chat kar sakte hain.";
+        }
+
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
         }
 
         // Mobile Menu Toggle
