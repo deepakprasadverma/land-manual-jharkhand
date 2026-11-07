@@ -76,14 +76,15 @@ export default async function handler(req, res) {
             deliveryInfo
         };
 
-        // Forward to Google Sheets if WEBHOOK URL environment variable is set
-        const googleSheetWebhook = process.env.GOOGLE_SHEET_WEBHOOK_URL;
+        // Forward to Google Sheets Webhook
+        const googleSheetWebhook = process.env.GOOGLE_SHEET_WEBHOOK_URL || 'https://script.google.com/macros/s/AKfycbwHBbsHs5H5Tgh6ejlq-3bgbidbn1jI_tuiMSzhdSNlun5zHhHkmg-60VY5AyvJNqA/exec';
         if (googleSheetWebhook) {
             try {
                 await fetch(googleSheetWebhook, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(orderRecord)
+                    body: JSON.stringify(orderRecord),
+                    redirect: 'follow'
                 });
             } catch (err) {
                 console.error('Google Sheet forwarding error:', err.message);

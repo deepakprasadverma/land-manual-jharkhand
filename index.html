@@ -941,7 +941,10 @@
                 Processing Order...
             `;
 
+            const GOOGLE_SHEET_WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbwHBbsHs5H5Tgh6ejlq-3bgbidbn1jI_tuiMSzhdSNlun5zHhHkmg-60VY5AyvJNqA/exec';
+
             const orderPayload = {
+                timestamp: new Date().toLocaleString("en-IN", { timeZone: "Asia/Kolkata" }),
                 name: custName,
                 phone: custPhone,
                 email: custEmail,
@@ -951,10 +954,22 @@
                 paymentMethod: 'Cash on Delivery / UPI'
             };
 
+            // 1. Direct sync to Google Sheet Webhook (works on GitHub Pages, Vercel & Local)
+            try {
+                fetch(GOOGLE_SHEET_WEBHOOK_URL, {
+                    method: 'POST',
+                    mode: 'no-cors',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(orderPayload)
+                }).catch(e => console.log('Sheet sync response:', e));
+            } catch (sheetErr) {
+                console.warn('Sheet sync notice:', sheetErr);
+            }
+
             let responseData = null;
 
             try {
-                // Call Vercel Serverless Function
+                // 2. Call Vercel Serverless Function (if running on Vercel)
                 const res = await fetch('/api/order', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
@@ -968,11 +983,20 @@
                 }
             } catch (err) {
                 console.warn('API fetch offline or local fallback:', err);
-                // Graceful local fallback simulation so offline/file demo still shows full flow
                 const randomId = Math.floor(100000 + Math.random() * 900000);
                 responseData = {
                     success: true,
                     data: {
+                        orderId: `LMJ-2026-${randomId}`,
+                        customer: { name: custName, phone: custPhone, email: custEmail },
+                        order: { format: currentFormat, price: data.price },
+                        deliveryInfo: {
+                            type: 'physical_shipping',
+                            instructions: 'Courier tracking ID will be sent on WhatsApp (+91 7543005549).'
+                        }
+                    }
+                };
+            }
                         orderId: `LMJ-2026-${randomId}`,
                         customer: { name: custName, phone: custPhone, email: custEmail },
                         order: { format: currentFormat, price: data.price },
