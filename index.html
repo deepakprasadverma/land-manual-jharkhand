@@ -410,6 +410,10 @@
                             Official revenue forms &amp; templates included
                         </li>
                     </ul>
+                    <button onclick="handlePreOrder('physical')" class="mt-6 w-full inline-flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-forest-900 hover:bg-forest-800 text-gold-300 font-bold text-xs shadow-md transition-all cursor-pointer">
+                        <svg class="w-4 h-4 text-gold-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg>
+                        Order Physical Book Now (₹449)
+                    </button>
                 </div>
 
             </div>
@@ -626,12 +630,15 @@
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
             </button>
 
-            <div class="text-center mb-6">
+            <div class="text-center mb-5">
                 <div class="w-12 h-12 bg-forest-100 rounded-full flex items-center justify-center mx-auto mb-2 text-forest-800">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
                 </div>
                 <h4 class="text-xl font-bold font-serif text-forest-950">Confirm Your Order</h4>
-                <p class="text-xs text-slate-500 mt-1" id="modalFormatTitle">Format: Physical Book (Hardcopy)</p>
+                <div class="flex items-center justify-center gap-2 mt-1.5">
+                    <p class="text-xs text-slate-500 font-medium" id="modalFormatTitle">Format: Physical Book (Hardcopy)</p>
+                    <span class="inline-block px-2.5 py-0.5 rounded-full text-xs font-bold bg-amber-100 text-amber-900 border border-amber-300" id="modalPriceBadge">₹449</span>
+                </div>
             </div>
 
             <form id="checkoutForm" onsubmit="handleFormSubmit(event)" class="space-y-4">
@@ -916,12 +923,17 @@
         let currentFormat = 'physical';
 
         function selectFormat(formatKey) {
-            const data = formatData[formatKey];
+            const data = formatData[formatKey] || formatData['physical'];
 
             if (!data.available) {
                 alert(`📢 Notice: ${data.title} is Coming Soon!\n\nAbhi aap Physical Book (Hardcopy) sirf ₹449/- mein order kar sakte hain (Free Delivery across India).`);
-                // Keep physical book selected for buying
                 formatKey = 'physical';
+            }
+
+            // If user clicks on the already active physical book card, directly open checkout modal
+            if (formatKey === 'physical' && currentFormat === 'physical') {
+                handlePreOrder('physical');
+                return;
             }
 
             currentFormat = formatKey;
@@ -930,49 +942,77 @@
             // Update Cards Style
             ['physical', 'ebook', 'audiobook'].forEach(key => {
                 const card = document.getElementById(`card-${key}`);
-                if (key === formatKey) {
-                    card.classList.remove('bg-forest-950/40', 'border-forest-700/60');
-                    card.classList.add('bg-forest-950/80', 'border-gold-400', 'shadow-lg', 'shadow-gold-500/10');
-                } else {
-                    card.classList.remove('bg-forest-950/80', 'border-gold-400', 'shadow-lg', 'shadow-gold-500/10');
-                    card.classList.add('bg-forest-950/40', 'border-forest-700/60');
+                if (card) {
+                    if (key === formatKey) {
+                        card.classList.remove('bg-forest-950/40', 'border-forest-700/60');
+                        card.classList.add('bg-forest-950/80', 'border-gold-400', 'shadow-lg', 'shadow-gold-500/10');
+                    } else {
+                        card.classList.remove('bg-forest-950/80', 'border-gold-400', 'shadow-lg', 'shadow-gold-500/10');
+                        card.classList.add('bg-forest-950/40', 'border-forest-700/60');
+                    }
                 }
             });
 
             // Update CTA Button Text
-            document.getElementById('btnText').textContent = activeData.buttonText;
+            const btn = document.getElementById('btnText');
+            if (btn) btn.textContent = activeData.buttonText;
         }
 
         // Modal Controls
-        function handlePreOrder() {
-            const data = formatData[currentFormat];
+        function handlePreOrder(formatKey) {
+            if (formatKey) {
+                currentFormat = formatKey;
+            }
+            const data = formatData[currentFormat] || formatData['physical'];
             if (!data.available) {
                 alert("E-Book aur Audiobook jaldi hi Coming Soon hain! Abhi aap Physical Book (Hardcopy) ₹449/- mein order kar sakte hain.");
                 selectFormat('physical');
                 return;
             }
 
-            document.getElementById('modalFormatTitle').textContent = `Format: ${data.title}`;
-            document.getElementById('modalPriceBadge').textContent = data.price;
-            
-            const addrField = document.getElementById('addressField');
-            if (data.requiresAddress) {
-                addrField.classList.remove('hidden');
-                document.getElementById('custAddress').required = true;
-            } else {
-                addrField.classList.add('hidden');
-                document.getElementById('custAddress').required = false;
+            const formatTitleEl = document.getElementById('modalFormatTitle');
+            if (formatTitleEl) {
+                formatTitleEl.textContent = `Format: ${data.title}`;
             }
 
-            document.getElementById('checkoutModal').classList.remove('hidden');
+            const priceBadgeEl = document.getElementById('modalPriceBadge');
+            if (priceBadgeEl) {
+                priceBadgeEl.textContent = data.price;
+            }
+            
+            const addrField = document.getElementById('addressField');
+            const custAddr = document.getElementById('custAddress');
+            if (addrField && custAddr) {
+                if (data.requiresAddress) {
+                    addrField.classList.remove('hidden');
+                    custAddr.required = true;
+                } else {
+                    addrField.classList.add('hidden');
+                    custAddr.required = false;
+                }
+            }
+
+            const modal = document.getElementById('checkoutModal');
+            if (modal) {
+                modal.classList.remove('hidden');
+                modal.style.display = 'flex';
+            }
         }
 
         function closeModal() {
-            document.getElementById('checkoutModal').classList.add('hidden');
+            const modal = document.getElementById('checkoutModal');
+            if (modal) {
+                modal.classList.add('hidden');
+                modal.style.display = 'none';
+            }
         }
 
         function closeSuccessModal() {
-            document.getElementById('orderSuccessModal').classList.add('hidden');
+            const modal = document.getElementById('orderSuccessModal');
+            if (modal) {
+                modal.classList.add('hidden');
+                modal.style.display = 'none';
+            }
         }
 
         let selectedPaymentMode = 'online';
@@ -1253,7 +1293,11 @@
             const waMsg = encodeURIComponent(`Hello, I have placed an order for "Land Manual of Jharkhand" (Physical Book - ₹449). Order ID: ${order.orderId || 'LMJ-2026'}. ${payText}. Please confirm dispatch.`);
             document.getElementById('whatsappSupportBtn').href = `https://wa.me/918409813643?text=${waMsg}`;
 
-            document.getElementById('orderSuccessModal').classList.remove('hidden');
+            const successModal = document.getElementById('orderSuccessModal');
+            if (successModal) {
+                successModal.classList.remove('hidden');
+                successModal.style.display = 'flex';
+            }
         }
 
         // AI Chatbot with WhatsApp Logic
