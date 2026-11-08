@@ -96,12 +96,12 @@
 
                 <!-- Order Now CTA Button -->
                 <div class="flex items-center space-x-4">
-                    <a href="#hero-order" class="hidden sm:inline-flex items-center px-5 py-2.5 rounded-full text-sm font-bold text-forest-950 bg-gradient-to-r from-gold-400 via-gold-300 to-amber-300 hover:from-gold-300 hover:to-gold-200 shadow-md shadow-gold-500/25 hover:shadow-gold-500/40 hover:-translate-y-0.5 transition-all">
+                    <button onclick="handlePreOrder()" class="hidden sm:inline-flex items-center px-5 py-2.5 rounded-full text-sm font-bold text-forest-950 bg-gradient-to-r from-gold-400 via-gold-300 to-amber-300 hover:from-gold-300 hover:to-gold-200 shadow-md shadow-gold-500/25 hover:shadow-gold-500/40 hover:-translate-y-0.5 transition-all cursor-pointer">
                         <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
                         </svg>
                         Order Now
-                    </a>
+                    </button>
                     
                     <!-- Mobile Hamburger Button -->
                     <button id="mobileMenuBtn" class="md:hidden text-white hover:text-gold-400 focus:outline-none" aria-label="Toggle navigation">
@@ -118,9 +118,9 @@
                 <a href="#benefits" class="block text-forest-100 hover:text-gold-400 font-medium py-1">Format Benefits</a>
                 <a href="#features" class="block text-forest-100 hover:text-gold-400 font-medium py-1">Key Features</a>
                 <a href="#author" class="block text-forest-100 hover:text-gold-400 font-medium py-1">About Author</a>
-                <a href="#hero-order" class="block w-full text-center px-5 py-2.5 rounded-lg text-sm font-bold text-forest-950 bg-gold-400 hover:bg-gold-300">
+                <button onclick="handlePreOrder()" class="block w-full text-center px-5 py-2.5 rounded-lg text-sm font-bold text-forest-950 bg-gold-400 hover:bg-gold-300 cursor-pointer">
                     Order Now
-                </a>
+                </button>
             </div>
         </div>
     </header>
@@ -644,8 +644,8 @@
                     <input type="tel" id="custPhone" required placeholder="+91 98765 43210" class="w-full px-3.5 py-2.5 rounded-lg border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-forest-600">
                 </div>
                 <div>
-                    <label class="block text-xs font-semibold text-slate-700 mb-1">Email Address</label>
-                    <input type="email" id="custEmail" required placeholder="name@example.com" class="w-full px-3.5 py-2.5 rounded-lg border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-forest-600">
+                    <label class="block text-xs font-semibold text-slate-700 mb-1">Email Address <span class="text-slate-400 font-normal">(Optional)</span></label>
+                    <input type="email" id="custEmail" placeholder="name@example.com (Optional)" class="w-full px-3.5 py-2.5 rounded-lg border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-forest-600">
                 </div>
                 <div id="addressField">
                     <label class="block text-xs font-semibold text-slate-700 mb-1">Delivery Address (Pin Code &amp; District)</label>
@@ -674,7 +674,7 @@
                 </div>
 
                 <div class="pt-2">
-                    <button type="submit" id="submitOrderBtn" class="w-full py-3.5 rounded-xl bg-forest-900 hover:bg-forest-800 text-gold-300 font-bold text-sm tracking-wide shadow-md transition-colors flex items-center justify-center gap-2">
+                    <button type="submit" id="submitOrderBtn" class="w-full py-3.5 rounded-xl bg-forest-900 hover:bg-forest-800 text-gold-300 font-bold text-sm tracking-wide shadow-md transition-colors flex items-center justify-center gap-2 cursor-pointer">
                         <svg class="w-4 h-4 text-gold-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
                         <span id="submitBtnText">Pay ₹449 Online (UPI/Card)</span>
                     </button>
@@ -683,6 +683,18 @@
                         <span>Razorpay Secured 256-bit Encryption • UPI / GPay / Cards</span>
                     </p>
                 </div>
+
+                <!-- 1-Click WhatsApp Order Alternative -->
+                <div class="relative flex py-1 items-center">
+                    <div class="flex-grow border-t border-slate-200"></div>
+                    <span class="flex-shrink mx-2 text-[10px] uppercase font-bold text-slate-400">या फिर सीधा</span>
+                    <div class="flex-grow border-t border-slate-200"></div>
+                </div>
+
+                <button type="button" onclick="orderViaWhatsAppDirect()" class="w-full py-2.5 rounded-xl bg-emerald-50 hover:bg-emerald-100 border border-emerald-300 text-emerald-800 font-bold text-xs shadow-sm transition-colors flex items-center justify-center gap-2 cursor-pointer">
+                    <svg class="w-4 h-4 fill-[#25D366]" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+                    <span>WhatsApp (+91 8409813643) पर आर्डर भेजें</span>
+                </button>
             </form>
         </div>
     </div>
@@ -982,10 +994,26 @@
             }
         }
 
+        // 1-Click Direct WhatsApp Order
+        function orderViaWhatsAppDirect() {
+            const name = (document.getElementById('custName')?.value || '').trim();
+            const phone = (document.getElementById('custPhone')?.value || '').trim();
+            const addr = (document.getElementById('custAddress')?.value || '').trim();
+            
+            let msg = 'Namaste Salendra ji, mujhe "Land Manual of Jharkhand" (Physical Book - ₹449) order karni hai.';
+            if (name) msg += `\n*Naam:* ${name}`;
+            if (phone) msg += `\n*Phone:* ${phone}`;
+            if (addr) msg += `\n*Address:* ${addr}`;
+            msg += '\nKripya dispatch aur order confirm karein.';
+
+            const url = `https://wa.me/918409813643?text=${encodeURIComponent(msg)}`;
+            window.open(url, '_blank');
+        }
+
         // Razorpay Online & COD Submission
         async function handleFormSubmit(event) {
             event.preventDefault();
-            const data = formatData[currentFormat];
+            const data = formatData[currentFormat] || formatData['physical'];
             const submitBtn = document.getElementById('submitOrderBtn');
             const submitText = document.getElementById('submitBtnText');
 
@@ -994,10 +1022,32 @@
             const custEmail = document.getElementById('custEmail').value.trim();
             const custAddress = document.getElementById('custAddress').value.trim();
 
+            if (!custName || !custPhone) {
+                alert("कृपया अपना नाम और मोबाइल नंबर अवश्य भरें।");
+                return;
+            }
+
+            if (data.requiresAddress && !custAddress) {
+                alert("कृपया डिलीवरी का पता (पिन कोड सहित) अवश्य भरें ताकि किताब भेजी जा सके।");
+                return;
+            }
+
             if (selectedPaymentMode === 'online') {
                 // Razorpay Payment Gateway Flow
                 if (typeof Razorpay === 'undefined') {
-                    alert("Payment Gateway loading error. Please refresh or select Cash on Delivery.");
+                    const useCod = confirm("ऑनलाइन पेमेंट गेटवे लोड नहीं हो पाया (Ad-blocker या नेटवर्क रुकावट की वजह से)।\n\nक्या आप 'Cash on Delivery' (डिलीवरी पर ₹449 नकद) से आर्डर कन्फर्म करना चाहते हैं?");
+                    if (useCod) {
+                        updatePaymentMode('cod');
+                        await completeOrderPlacement({
+                            custName,
+                            custPhone,
+                            custEmail,
+                            custAddress,
+                            paymentMethod: 'Cash on Delivery',
+                            paymentId: 'COD-VERIFY',
+                            paymentStatus: 'Pending COD Verification'
+                        });
+                    }
                     return;
                 }
 
@@ -1013,7 +1063,7 @@
                     prefill: {
                         name: custName,
                         contact: custPhone,
-                        email: custEmail
+                        email: custEmail || 'Salendra.8551@gmail.com'
                     },
                     notes: {
                         address: custAddress,
@@ -1037,7 +1087,7 @@
                             custEmail,
                             custAddress,
                             paymentMethod: 'Online Paid (UPI/Card)',
-                            paymentId: razorpayResponse.razorpay_payment_id,
+                            paymentId: razorpayResponse.razorpay_payment_id || 'PAY-VERIFIED',
                             paymentStatus: 'PAID'
                         });
                     }
@@ -1046,16 +1096,42 @@
                 try {
                     const rzp = new Razorpay(options);
                     rzp.on('payment.failed', function (resp) {
-                        alert("Payment failed: " + (resp.error ? resp.error.description : 'Transaction cancelled. Please try again or select Cash on Delivery.'));
+                        console.error("Razorpay error:", resp);
+                        const errDesc = (resp && resp.error && (resp.error.description || resp.error.reason)) || 'Transaction cancelled';
+                        const switchCod = confirm(`ऑनलाइन पेमेंट में समस्या: ${errDesc}\n\nक्या आप 'Cash on Delivery' (डिलीवरी पर ₹449 नकद) से आर्डर पूरा करना चाहते हैं?`);
                         submitBtn.disabled = false;
                         updatePaymentMode(selectedPaymentMode);
+                        if (switchCod) {
+                            updatePaymentMode('cod');
+                            completeOrderPlacement({
+                                custName,
+                                custPhone,
+                                custEmail,
+                                custAddress,
+                                paymentMethod: 'Cash on Delivery',
+                                paymentId: 'COD-VERIFY',
+                                paymentStatus: 'Pending COD Verification'
+                            });
+                        }
                     });
                     rzp.open();
                 } catch (rzpErr) {
                     console.error("Razorpay open error:", rzpErr);
-                    alert("Could not initialize payment. Please try Cash on Delivery.");
                     submitBtn.disabled = false;
                     updatePaymentMode(selectedPaymentMode);
+                    const switchCod = confirm("Razorpay पेमेंट गेटवे खुलने में समस्या आई।\n\nक्या आप 'Cash on Delivery' (COD) से आर्डर कन्फर्म करना चाहते हैं?");
+                    if (switchCod) {
+                        updatePaymentMode('cod');
+                        await completeOrderPlacement({
+                            custName,
+                            custPhone,
+                            custEmail,
+                            custAddress,
+                            paymentMethod: 'Cash on Delivery',
+                            paymentId: 'COD-VERIFY',
+                            paymentStatus: 'Pending COD Verification'
+                        });
+                    }
                 }
 
             } else {
@@ -1076,7 +1152,7 @@
         }
 
         async function completeOrderPlacement(info) {
-            const data = formatData[currentFormat];
+            const data = formatData[currentFormat] || formatData['physical'];
             const GOOGLE_SHEET_WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbwHBbsHs5H5Tgh6ejlq-3bgbidbn1jI_tuiMSzhdSNlun5zHhHkmg-60VY5AyvJNqA/exec';
             const randomId = Math.floor(100000 + Math.random() * 900000);
             const orderId = `LMJ-2026-${randomId}`;
@@ -1086,41 +1162,45 @@
                 orderId: orderId,
                 name: info.custName,
                 phone: info.custPhone,
-                email: info.custEmail,
+                email: info.custEmail || 'Not Provided',
                 address: data.requiresAddress ? info.custAddress : 'Digital Edition (Download)',
-                format: currentFormat,
+                format: data.title || currentFormat,
                 price: data.price,
                 paymentMethod: info.paymentMethod,
-                paymentId: info.paymentId,
-                status: info.paymentStatus
+                paymentId: info.paymentId || 'N/A',
+                status: info.paymentStatus || 'Confirmed'
             };
 
-            // 1. Direct sync to Google Sheet Webhook (works on GitHub Pages, Vercel & Local)
+            // 1. Direct sync to Google Sheet Webhook (CORS safe with text/plain so it never throws TypeError)
             try {
                 fetch(GOOGLE_SHEET_WEBHOOK_URL, {
                     method: 'POST',
                     mode: 'no-cors',
-                    headers: { 'Content-Type': 'application/json' },
+                    headers: { 'Content-Type': 'text/plain;charset=utf-8' },
                     body: JSON.stringify(orderPayload)
-                }).catch(e => console.log('Sheet sync response:', e));
+                }).catch(function(e) { console.log('Sheet notice:', e); });
             } catch (sheetErr) {
                 console.warn('Sheet sync notice:', sheetErr);
             }
 
-            // 2. Call Vercel Serverless Function
-            try {
-                await fetch('/api/order', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(orderPayload)
-                });
-            } catch (err) {
-                console.warn('API fetch notice:', err);
+            // 2. Call Vercel Serverless Function only when hosted on Vercel
+            if (window.location.hostname.includes('vercel.app') || window.location.hostname === 'localhost') {
+                try {
+                    fetch('/api/order', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(orderPayload)
+                    }).catch(function(e) { console.log('API notice:', e); });
+                } catch (err) {
+                    console.warn('API fetch notice:', err);
+                }
             }
 
             // Restore Submit Button & Close Modal
             const submitBtn = document.getElementById('submitOrderBtn');
-            submitBtn.disabled = false;
+            if (submitBtn) {
+                submitBtn.disabled = false;
+            }
             updatePaymentMode(selectedPaymentMode);
             closeModal();
 
@@ -1133,7 +1213,10 @@
                 paymentStatus: info.paymentStatus
             });
 
-            document.getElementById('checkoutForm').reset();
+            const checkoutForm = document.getElementById('checkoutForm');
+            if (checkoutForm) {
+                checkoutForm.reset();
+            }
             updatePaymentMode('online');
         }
 

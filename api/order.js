@@ -23,11 +23,11 @@ export default async function handler(req, res) {
     try {
         const { name, phone, email, address, format, price, paymentMethod = 'Online Paid (UPI/Card)', paymentId = 'N/A', status = 'Confirmed' } = req.body || {};
 
-        // Validation
-        if (!name || !phone || !email || !format) {
+        // Validation (Name, Phone, and Format are required; Email and Address are flexible)
+        if (!name || !phone || !format) {
             return res.status(400).json({
                 success: false,
-                error: 'Please provide all required fields: name, phone, email, and format.'
+                error: 'Please provide required fields: name, phone, and format.'
             });
         }
 
@@ -64,7 +64,7 @@ export default async function handler(req, res) {
             customer: {
                 name: name.trim(),
                 phone: phone.trim(),
-                email: email.trim(),
+                email: (email || 'Not Provided').trim(),
                 address: (address || 'Digital Edition - No Shipping Required').trim()
             },
             order: {
