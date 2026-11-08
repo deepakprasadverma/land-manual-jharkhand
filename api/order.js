@@ -21,7 +21,7 @@ export default async function handler(req, res) {
     }
 
     try {
-        const { name, phone, email, address, format, price, paymentMethod = 'COD / UPI' } = req.body || {};
+        const { name, phone, email, address, format, price, paymentMethod = 'Online Paid (UPI/Card)', paymentId = 'N/A', status = 'Confirmed' } = req.body || {};
 
         // Validation
         if (!name || !phone || !email || !format) {
@@ -71,7 +71,8 @@ export default async function handler(req, res) {
                 format,
                 price: price || '₹449',
                 paymentMethod,
-                status: 'Confirmed'
+                paymentId,
+                status: status || 'Confirmed'
             },
             deliveryInfo
         };

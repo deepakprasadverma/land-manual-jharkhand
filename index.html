@@ -6,6 +6,8 @@
     <title>Land Manual of Jharkhand - By Salendra Kumar Verma</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Razorpay Checkout SDK -->
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
     <script>
         tailwind.config = {
             theme: {
@@ -650,12 +652,36 @@
                     <textarea id="custAddress" rows="2" placeholder="e.g. Circular Road, Lalpur, Ranchi - 834001" class="w-full px-3.5 py-2.5 rounded-lg border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-forest-600"></textarea>
                 </div>
 
+                <!-- Payment Method Selection -->
+                <div class="space-y-1.5 pt-1">
+                    <label class="block text-xs font-semibold text-slate-700">Choose Payment Method:</label>
+                    <div class="grid grid-cols-2 gap-2">
+                        <label onclick="updatePaymentMode('online')" id="opt-online" class="cursor-pointer flex items-center p-2.5 rounded-xl border-2 border-emerald-600 bg-emerald-50 text-forest-950 transition-all shadow-sm">
+                            <input type="radio" name="paymentOption" value="online" checked class="accent-emerald-700 mr-2">
+                            <div class="overflow-hidden">
+                                <span class="block text-xs font-black text-emerald-950">Online (UPI / Cards)</span>
+                                <span class="block text-[10px] text-emerald-700 font-medium">GPay, PhonePe, Paytm</span>
+                            </div>
+                        </label>
+                        <label onclick="updatePaymentMode('cod')" id="opt-cod" class="cursor-pointer flex items-center p-2.5 rounded-xl border-2 border-slate-200 bg-slate-50 text-slate-700 transition-all">
+                            <input type="radio" name="paymentOption" value="cod" class="accent-emerald-700 mr-2">
+                            <div class="overflow-hidden">
+                                <span class="block text-xs font-bold text-slate-800">Cash on Delivery</span>
+                                <span class="block text-[10px] text-slate-500 font-medium">Pay upon delivery</span>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+
                 <div class="pt-2">
                     <button type="submit" id="submitOrderBtn" class="w-full py-3.5 rounded-xl bg-forest-900 hover:bg-forest-800 text-gold-300 font-bold text-sm tracking-wide shadow-md transition-colors flex items-center justify-center gap-2">
-                        <span id="submitBtnText">Complete Order Now</span>
-                        <span id="modalPriceBadge" class="bg-gold-400 text-forest-950 px-2.5 py-0.5 rounded text-xs font-bold">₹449</span>
+                        <svg class="w-4 h-4 text-gold-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+                        <span id="submitBtnText">Pay ₹449 Online (UPI/Card)</span>
                     </button>
-                    <p class="text-[11px] text-center text-slate-400 mt-2">Cash on Delivery &amp; UPI available • Free Delivery across India</p>
+                    <p class="text-[11px] text-center text-slate-400 mt-2 flex items-center justify-center gap-1.5">
+                        <svg class="w-3.5 h-3.5 text-emerald-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                        <span>Razorpay Secured 256-bit Encryption • UPI / GPay / Cards</span>
+                    </p>
                 </div>
             </form>
         </div>
@@ -694,9 +720,13 @@
                     <span class="text-slate-500">Amount:</span>
                     <span class="font-bold text-emerald-700 text-sm" id="successPrice">₹449</span>
                 </div>
-                <div class="flex justify-between">
+                <div class="flex justify-between border-b border-slate-200 pb-2">
                     <span class="text-slate-500">Payment Status:</span>
-                    <span class="font-bold text-amber-700" id="successPaymentStatus">Cash on Delivery / UPI</span>
+                    <span class="font-bold text-emerald-700" id="successPaymentStatus">Online Paid</span>
+                </div>
+                <div class="flex justify-between hidden" id="successPaymentIdRow">
+                    <span class="text-slate-500">Razorpay Payment ID:</span>
+                    <span class="font-mono font-bold text-emerald-800" id="successPaymentId">pay_xxxxxx</span>
                 </div>
             </div>
 
@@ -933,7 +963,26 @@
             document.getElementById('orderSuccessModal').classList.add('hidden');
         }
 
-        // Real Backend AJAX Submission
+        let selectedPaymentMode = 'online';
+
+        function updatePaymentMode(mode) {
+            selectedPaymentMode = mode;
+            const optOnline = document.getElementById('opt-online');
+            const optCod = document.getElementById('opt-cod');
+            const btnText = document.getElementById('submitBtnText');
+
+            if (mode === 'online') {
+                optOnline.className = 'cursor-pointer flex items-center p-2.5 rounded-xl border-2 border-emerald-600 bg-emerald-50 text-forest-950 transition-all shadow-sm';
+                optCod.className = 'cursor-pointer flex items-center p-2.5 rounded-xl border-2 border-slate-200 bg-slate-50 text-slate-700 transition-all';
+                btnText.textContent = 'Pay ₹449 Online (UPI/Card)';
+            } else {
+                optOnline.className = 'cursor-pointer flex items-center p-2.5 rounded-xl border-2 border-slate-200 bg-slate-50 text-slate-700 transition-all';
+                optCod.className = 'cursor-pointer flex items-center p-2.5 rounded-xl border-2 border-emerald-600 bg-emerald-50 text-forest-950 transition-all shadow-sm';
+                btnText.textContent = 'Place Order (Cash on Delivery)';
+            }
+        }
+
+        // Razorpay Online & COD Submission
         async function handleFormSubmit(event) {
             event.preventDefault();
             const data = formatData[currentFormat];
@@ -945,27 +994,105 @@
             const custEmail = document.getElementById('custEmail').value.trim();
             const custAddress = document.getElementById('custAddress').value.trim();
 
-            // Set Loading State
-            submitBtn.disabled = true;
-            submitText.innerHTML = `
-                <svg class="animate-spin -ml-1 mr-2 h-4 w-4 text-gold-300 inline" fill="none" viewBox="0 0 24 24">
-                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                </svg>
-                Processing Order...
-            `;
+            if (selectedPaymentMode === 'online') {
+                // Razorpay Payment Gateway Flow
+                if (typeof Razorpay === 'undefined') {
+                    alert("Payment Gateway loading error. Please refresh or select Cash on Delivery.");
+                    return;
+                }
 
+                submitBtn.disabled = true;
+                submitText.textContent = 'Opening Secure Gateway...';
+
+                const options = {
+                    key: "rzp_live_TxXKt2MAAU4LHq",
+                    amount: 44900, // ₹449 in paise (449 * 100)
+                    currency: "INR",
+                    name: "Land Manual of Jharkhand",
+                    description: "Author: Salendra Kumar Verma",
+                    prefill: {
+                        name: custName,
+                        contact: custPhone,
+                        email: custEmail
+                    },
+                    notes: {
+                        address: custAddress,
+                        format: data.title
+                    },
+                    theme: {
+                        color: "#064e3b" // Theme Forest Green
+                    },
+                    modal: {
+                        ondismiss: function () {
+                            submitBtn.disabled = false;
+                            updatePaymentMode(selectedPaymentMode);
+                        }
+                    },
+                    handler: async function (razorpayResponse) {
+                        // Online Payment Successful!
+                        submitText.textContent = 'Verifying Payment...';
+                        await completeOrderPlacement({
+                            custName,
+                            custPhone,
+                            custEmail,
+                            custAddress,
+                            paymentMethod: 'Online Paid (UPI/Card)',
+                            paymentId: razorpayResponse.razorpay_payment_id,
+                            paymentStatus: 'PAID'
+                        });
+                    }
+                };
+
+                try {
+                    const rzp = new Razorpay(options);
+                    rzp.on('payment.failed', function (resp) {
+                        alert("Payment failed: " + (resp.error ? resp.error.description : 'Transaction cancelled. Please try again or select Cash on Delivery.'));
+                        submitBtn.disabled = false;
+                        updatePaymentMode(selectedPaymentMode);
+                    });
+                    rzp.open();
+                } catch (rzpErr) {
+                    console.error("Razorpay open error:", rzpErr);
+                    alert("Could not initialize payment. Please try Cash on Delivery.");
+                    submitBtn.disabled = false;
+                    updatePaymentMode(selectedPaymentMode);
+                }
+
+            } else {
+                // Cash on Delivery Flow
+                submitBtn.disabled = true;
+                submitText.textContent = 'Registering Order...';
+
+                await completeOrderPlacement({
+                    custName,
+                    custPhone,
+                    custEmail,
+                    custAddress,
+                    paymentMethod: 'Cash on Delivery',
+                    paymentId: 'COD-VERIFY',
+                    paymentStatus: 'Pending COD Verification'
+                });
+            }
+        }
+
+        async function completeOrderPlacement(info) {
+            const data = formatData[currentFormat];
             const GOOGLE_SHEET_WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbwHBbsHs5H5Tgh6ejlq-3bgbidbn1jI_tuiMSzhdSNlun5zHhHkmg-60VY5AyvJNqA/exec';
+            const randomId = Math.floor(100000 + Math.random() * 900000);
+            const orderId = `LMJ-2026-${randomId}`;
 
             const orderPayload = {
                 timestamp: new Date().toLocaleString("en-IN", { timeZone: "Asia/Kolkata" }),
-                name: custName,
-                phone: custPhone,
-                email: custEmail,
-                address: data.requiresAddress ? custAddress : 'Digital Edition (Download)',
+                orderId: orderId,
+                name: info.custName,
+                phone: info.custPhone,
+                email: info.custEmail,
+                address: data.requiresAddress ? info.custAddress : 'Digital Edition (Download)',
                 format: currentFormat,
                 price: data.price,
-                paymentMethod: 'Cash on Delivery / UPI'
+                paymentMethod: info.paymentMethod,
+                paymentId: info.paymentId,
+                status: info.paymentStatus
             };
 
             // 1. Direct sync to Google Sheet Webhook (works on GitHub Pages, Vercel & Local)
@@ -980,46 +1107,34 @@
                 console.warn('Sheet sync notice:', sheetErr);
             }
 
-            let responseData = null;
-
+            // 2. Call Vercel Serverless Function
             try {
-                // 2. Call Vercel Serverless Function (if running on Vercel)
-                const res = await fetch('/api/order', {
+                await fetch('/api/order', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(orderPayload)
                 });
-
-                if (res.ok) {
-                    responseData = await res.json();
-                } else {
-                    throw new Error('API returned ' + res.status);
-                }
             } catch (err) {
-                console.warn('API fetch offline or local fallback:', err);
-                const randomId = Math.floor(100000 + Math.random() * 900000);
-                responseData = {
-                    success: true,
-                    data: {
-                        orderId: `LMJ-2026-${randomId}`,
-                        customer: { name: custName, phone: custPhone, email: custEmail },
-                        order: { format: currentFormat, price: data.price },
-                        deliveryInfo: {
-                            type: 'physical_shipping',
-                            instructions: 'Courier tracking ID will be sent on WhatsApp (+91 8409813643).'
-                        }
-                    }
-                };
+                console.warn('API fetch notice:', err);
             }
 
-            // Restore Submit Button
+            // Restore Submit Button & Close Modal
+            const submitBtn = document.getElementById('submitOrderBtn');
             submitBtn.disabled = false;
-            submitText.textContent = 'Complete Order Now';
-
-            // Close Form Modal & Open Success Modal
+            updatePaymentMode(selectedPaymentMode);
             closeModal();
-            showOrderSuccess(responseData.data);
+
+            // Open Success Modal with Details
+            showOrderSuccess({
+                orderId: orderId,
+                customer: { name: info.custName, phone: info.custPhone, email: info.custEmail },
+                paymentMethod: info.paymentMethod,
+                paymentId: info.paymentId,
+                paymentStatus: info.paymentStatus
+            });
+
             document.getElementById('checkoutForm').reset();
+            updatePaymentMode('online');
         }
 
         function showOrderSuccess(order) {
@@ -1029,6 +1144,21 @@
             document.getElementById('successCustomer').textContent = `${order.customer.name} (${order.customer.phone})`;
             document.getElementById('successPrice').textContent = data.price;
 
+            const paymentStatusEl = document.getElementById('successPaymentStatus');
+            const paymentIdRow = document.getElementById('successPaymentIdRow');
+            const paymentIdEl = document.getElementById('successPaymentId');
+
+            if (order.paymentId && order.paymentId !== 'COD-VERIFY') {
+                paymentStatusEl.textContent = 'PAID (Verified via Razorpay)';
+                paymentStatusEl.className = 'font-bold text-emerald-700';
+                paymentIdRow.classList.remove('hidden');
+                paymentIdEl.textContent = order.paymentId;
+            } else {
+                paymentStatusEl.textContent = 'Cash on Delivery (Pending)';
+                paymentStatusEl.className = 'font-bold text-amber-700';
+                paymentIdRow.classList.add('hidden');
+            }
+
             const digitalSec = document.getElementById('digitalDeliverySection');
             const physicalSec = document.getElementById('physicalDeliverySection');
 
@@ -1036,7 +1166,8 @@
             physicalSec.classList.remove('hidden');
 
             // Setup WhatsApp direct connect link (+91 8409813643)
-            const waMsg = encodeURIComponent(`Hello, I have placed an order for "Land Manual of Jharkhand" (Physical Book - ₹449). Order ID: ${order.orderId || 'LMJ-2026'}. Please confirm my order.`);
+            const payText = order.paymentId && order.paymentId !== 'COD-VERIFY' ? `Payment: PAID (Razorpay ID: ${order.paymentId})` : 'Payment: Cash on Delivery';
+            const waMsg = encodeURIComponent(`Hello, I have placed an order for "Land Manual of Jharkhand" (Physical Book - ₹449). Order ID: ${order.orderId || 'LMJ-2026'}. ${payText}. Please confirm dispatch.`);
             document.getElementById('whatsappSupportBtn').href = `https://wa.me/918409813643?text=${waMsg}`;
 
             document.getElementById('orderSuccessModal').classList.remove('hidden');
