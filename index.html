@@ -200,10 +200,10 @@
                                 </div>
                             </div>
 
-                            <!-- 2. E-Book Card (Coming Soon) -->
-                            <div onclick="selectFormat('ebook')" id="card-ebook" class="format-card cursor-pointer relative rounded-xl p-4 transition-all duration-200 bg-forest-950/40 border-2 border-forest-700/60 hover:border-forest-600 opacity-90">
-                                <div class="absolute -top-2.5 right-3 px-2 py-0.5 rounded-full text-xs font-bold uppercase tracking-wider bg-amber-400/20 text-amber-300 border border-amber-400/40">
-                                    Coming Soon
+                            <!-- 2. E-Book Card (Active - ₹299) -->
+                            <div onclick="selectFormat('ebook')" id="card-ebook" class="format-card cursor-pointer relative rounded-xl p-4 transition-all duration-200 bg-forest-950/40 border-2 border-forest-700/60 hover:border-gold-400">
+                                <div class="absolute -top-2.5 right-3 px-2 py-0.5 rounded-full text-xs font-bold uppercase tracking-wider bg-emerald-500/20 text-emerald-300 border border-emerald-400/40">
+                                    Instant PDF
                                 </div>
                                 <div class="flex items-center gap-3">
                                     <div class="w-10 h-10 rounded-lg bg-forest-800/80 flex items-center justify-center text-forest-200 shrink-0">
@@ -212,13 +212,16 @@
                                         </svg>
                                     </div>
                                     <div class="overflow-hidden">
-                                        <h3 class="font-bold text-sm text-white truncate">E-Book</h3>
-                                        <p class="text-xs text-forest-200 truncate">PDF &amp; ePub</p>
+                                        <h3 class="font-bold text-sm text-white truncate">E-Book (PDF)</h3>
+                                        <p class="text-xs text-forest-200 truncate">Digital Download</p>
                                     </div>
                                 </div>
                                 <div class="mt-3 pt-2 border-t border-forest-800/80 flex items-baseline justify-between">
-                                    <span class="text-sm font-extrabold text-amber-300">Coming Soon</span>
-                                    <span class="text-xs text-slate-400">Digital Access</span>
+                                    <div class="flex items-baseline gap-2">
+                                        <span class="text-lg font-black text-gold-300">₹299</span>
+                                        <span class="text-xs text-slate-400 line-through">₹449</span>
+                                    </div>
+                                    <span class="text-xs text-emerald-400 font-bold">Instant Download</span>
                                 </div>
                             </div>
 
@@ -345,21 +348,25 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
                         </svg>
                     </div>
-                    <span class="text-xs font-bold uppercase tracking-wider text-amber-700 bg-amber-100 px-2.5 py-1 rounded-md">Coming Soon</span>
-                    <h4 class="text-xl font-bold font-serif text-forest-950 mt-3 mb-2">Instant Access (E-Book)</h4>
+                    <span class="text-xs font-bold uppercase tracking-wider text-emerald-800 bg-emerald-100 px-2.5 py-1 rounded-md">Instant Access • ₹299</span>
+                    <h4 class="text-xl font-bold font-serif text-forest-950 mt-3 mb-2">Instant Access (E-Book PDF)</h4>
                     <p class="text-slate-600 leading-relaxed text-sm">
-                        Digital edition is coming soon! You will be able to read instantly on your mobile, tablet, or PC, with full-text searchability and offline access.
+                        Read instantly on your mobile, tablet, or PC with complete 191 pages, full-text searchability, clear diagrams, and lifetime offline access.
                     </p>
                     <ul class="mt-5 space-y-2 text-xs text-slate-500">
                         <li class="flex items-center gap-2">
                             <svg class="w-4 h-4 text-forest-600 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-                            Instant PDF &amp; ePub download
+                            Instant PDF download (191 Pages)
                         </li>
                         <li class="flex items-center gap-2">
                             <svg class="w-4 h-4 text-forest-600 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-                            Full-text searchable sections
+                            Full-text searchable &amp; mobile friendly
                         </li>
                     </ul>
+                    <button onclick="handlePreOrder('ebook')" class="mt-6 w-full inline-flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-forest-900 hover:bg-forest-800 text-gold-300 font-bold text-xs shadow-md transition-all cursor-pointer">
+                        <svg class="w-4 h-4 text-gold-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                        Order E-Book PDF Now (₹299)
+                    </button>
                 </div>
 
                 <!-- 2. Audiobook Card -->
@@ -660,14 +667,14 @@
                     <label class="block text-xs font-semibold text-slate-700">Choose Payment Method:</label>
                     <div class="grid grid-cols-2 gap-2">
                         <label onclick="updatePaymentMode('online')" id="opt-online" class="cursor-pointer flex items-center p-2.5 rounded-xl border-2 border-emerald-600 bg-emerald-50 text-forest-950 transition-all shadow-sm">
-                            <input type="radio" name="paymentOption" value="online" checked class="accent-emerald-700 mr-2">
+                            <input type="radio" id="radio-online" name="paymentOption" value="online" checked class="accent-emerald-700 mr-2">
                             <div class="overflow-hidden">
                                 <span class="block text-xs font-black text-emerald-950">Online (UPI / Cards)</span>
                                 <span class="block text-[10px] text-emerald-700 font-medium">GPay, PhonePe, Paytm</span>
                             </div>
                         </label>
                         <label onclick="updatePaymentMode('cod')" id="opt-cod" class="cursor-pointer flex items-center p-2.5 rounded-xl border-2 border-slate-200 bg-slate-50 text-slate-700 transition-all">
-                            <input type="radio" name="paymentOption" value="cod" class="accent-emerald-700 mr-2">
+                            <input type="radio" id="radio-cod" name="paymentOption" value="cod" class="accent-emerald-700 mr-2">
                             <div class="overflow-hidden">
                                 <span class="block text-xs font-bold text-slate-800">Cash on Delivery</span>
                                 <span class="block text-[10px] text-slate-500 font-medium">Pay upon delivery</span>
@@ -827,8 +834,9 @@
                         <p class="font-bold text-forest-950">Namaste! 🙏 Welcome to Land Manual of Jharkhand.</p>
                         <p>Main aapka AI Assistant hoon. Aap mujhse book ya Jharkhand bhoomi kanoon ke bare mein pooch sakte hain:</p>
                         <ul class="text-[11px] text-slate-600 list-disc list-inside space-y-0.5">
-                            <li><strong>Physical Book Price:</strong> ₹449/- (Free Delivery)</li>
-                            <li><strong>E-Book &amp; Audiobook:</strong> Coming Soon</li>
+                            <li><strong>Physical Book:</strong> ₹449/- (Free Delivery across India)</li>
+                            <li><strong>E-Book (PDF):</strong> ₹299/- (Instant Download)</li>
+                            <li><strong>Audiobook:</strong> Coming Soon</li>
                             <li><strong>Laws Covered:</strong> CNT, SPT, Mutation, Khatian</li>
                         </ul>
                         <p class="text-[10px] text-slate-400 pt-1 border-t border-slate-100">WhatsApp / Call: +91 8409813643</p>
@@ -839,10 +847,10 @@
             <!-- Quick Action Suggestion Chips -->
             <div class="p-2 bg-white border-t border-slate-200 flex flex-wrap gap-1.5">
                 <button onclick="sendQuickPrompt('Book Price aur Delivery detail?')" class="text-[11px] bg-slate-100 hover:bg-forest-100 text-forest-900 border border-slate-200 rounded-full px-2.5 py-1 transition-colors">
-                    💰 Price: ₹449?
+                    💰 Price: ₹449 / ₹299?
                 </button>
-                <button onclick="sendQuickPrompt('E-Book kab aayegi?')" class="text-[11px] bg-slate-100 hover:bg-forest-100 text-forest-900 border border-slate-200 rounded-full px-2.5 py-1 transition-colors">
-                    📱 E-Book / Audio?
+                <button onclick="sendQuickPrompt('E-Book kaise download karein?')" class="text-[11px] bg-slate-100 hover:bg-forest-100 text-forest-900 border border-slate-200 rounded-full px-2.5 py-1 transition-colors">
+                    📱 E-Book PDF (₹299)
                 </button>
                 <button onclick="sendQuickPrompt('CNT aur SPT Act ke bare mein kya hai?')" class="text-[11px] bg-slate-100 hover:bg-forest-100 text-forest-900 border border-slate-200 rounded-full px-2.5 py-1 transition-colors">
                     ⚖️ CNT/SPT Act?
@@ -894,23 +902,29 @@
                 id: 'physical',
                 title: 'Physical Book (Hardcopy)',
                 price: '₹449',
+                amountPaise: 44900,
                 buttonText: 'Pre-Order Physical Book (₹449)',
+                downloadUrl: null,
                 requiresAddress: true,
                 available: true
             },
             ebook: {
                 id: 'ebook',
-                title: 'E-Book (Digital Edition)',
-                price: 'Coming Soon',
-                buttonText: 'E-Book (Coming Soon)',
+                title: 'E-Book (Digital Edition - PDF)',
+                price: '₹299',
+                amountPaise: 29900,
+                buttonText: 'Buy E-Book PDF (₹299)',
+                downloadUrl: 'Land_Manual_of_Jharkhand_EBook.pdf',
                 requiresAddress: false,
-                available: false
+                available: true
             },
             audiobook: {
                 id: 'audiobook',
                 title: 'Audiobook (Audio Edition)',
                 price: 'Coming Soon',
+                amountPaise: 0,
                 buttonText: 'Audiobook (Coming Soon)',
+                downloadUrl: null,
                 requiresAddress: false,
                 available: false
             }
@@ -922,13 +936,13 @@
             const data = formatData[formatKey] || formatData['physical'];
 
             if (!data.available) {
-                alert(`📢 Notice: ${data.title} is Coming Soon!\n\nAbhi aap Physical Book (Hardcopy) sirf ₹449/- mein order kar sakte hain (Free Delivery across India).`);
-                formatKey = 'physical';
+                alert(`📢 Notice: ${data.title} is Coming Soon!\n\nAbhi aap Physical Book (₹449) ya E-Book PDF (₹299) order kar sakte hain.`);
+                return;
             }
 
-            // If user clicks on the already active physical book card, directly open checkout modal
-            if (formatKey === 'physical' && currentFormat === 'physical') {
-                handlePreOrder('physical');
+            // If user clicks on an already active card, directly open checkout modal
+            if (formatKey === currentFormat) {
+                handlePreOrder(formatKey);
                 return;
             }
 
@@ -961,10 +975,27 @@
             }
             const data = formatData[currentFormat] || formatData['physical'];
             if (!data.available) {
-                alert("E-Book aur Audiobook jaldi hi Coming Soon hain! Abhi aap Physical Book (Hardcopy) ₹449/- mein order kar sakte hain.");
+                alert("Audiobook jaldi hi Coming Soon hai! Abhi aap Physical Book (₹449) ya E-Book PDF (₹299) order kar sakte hain.");
                 selectFormat('physical');
                 return;
             }
+
+            // Keep card active styles in sync
+            ['physical', 'ebook', 'audiobook'].forEach(key => {
+                const card = document.getElementById(`card-${key}`);
+                if (card) {
+                    if (key === currentFormat) {
+                        card.classList.remove('bg-forest-950/40', 'border-forest-700/60');
+                        card.classList.add('bg-forest-950/80', 'border-gold-400', 'shadow-lg', 'shadow-gold-500/10');
+                    } else {
+                        card.classList.remove('bg-forest-950/80', 'border-gold-400', 'shadow-lg', 'shadow-gold-500/10');
+                        card.classList.add('bg-forest-950/40', 'border-forest-700/60');
+                    }
+                }
+            });
+
+            const btn = document.getElementById('btnText');
+            if (btn) btn.textContent = data.buttonText;
 
             const formatTitleEl = document.getElementById('modalFormatTitle');
             if (formatTitleEl) {
@@ -987,6 +1018,19 @@
                     custAddr.required = false;
                 }
             }
+
+            // For E-Book, digital payment gives instant download
+            const optCod = document.getElementById('opt-cod');
+            if (currentFormat === 'ebook') {
+                if (optCod) optCod.classList.add('hidden');
+                selectedPaymentMode = 'online';
+                const radioOnline = document.getElementById('radio-online');
+                if (radioOnline) radioOnline.checked = true;
+            } else {
+                if (optCod) optCod.classList.remove('hidden');
+            }
+
+            updatePaymentMode(selectedPaymentMode);
 
             const modal = document.getElementById('checkoutModal');
             if (modal) {
@@ -1015,32 +1059,34 @@
 
         function updatePaymentMode(mode) {
             selectedPaymentMode = mode;
+            const data = formatData[currentFormat] || formatData['physical'];
             const optOnline = document.getElementById('opt-online');
             const optCod = document.getElementById('opt-cod');
             const btnText = document.getElementById('submitBtnText');
 
             if (mode === 'online') {
-                optOnline.className = 'cursor-pointer flex items-center p-2.5 rounded-xl border-2 border-emerald-600 bg-emerald-50 text-forest-950 transition-all shadow-sm';
-                optCod.className = 'cursor-pointer flex items-center p-2.5 rounded-xl border-2 border-slate-200 bg-slate-50 text-slate-700 transition-all';
-                btnText.textContent = 'Pay ₹449 Online (UPI/Card)';
+                if (optOnline) optOnline.className = 'cursor-pointer flex items-center p-2.5 rounded-xl border-2 border-emerald-600 bg-emerald-50 text-forest-950 transition-all shadow-sm';
+                if (optCod) optCod.className = 'cursor-pointer flex items-center p-2.5 rounded-xl border-2 border-slate-200 bg-slate-50 text-slate-700 transition-all';
+                if (btnText) btnText.textContent = `Pay ${data.price} Online (UPI/Card)`;
             } else {
-                optOnline.className = 'cursor-pointer flex items-center p-2.5 rounded-xl border-2 border-slate-200 bg-slate-50 text-slate-700 transition-all';
-                optCod.className = 'cursor-pointer flex items-center p-2.5 rounded-xl border-2 border-emerald-600 bg-emerald-50 text-forest-950 transition-all shadow-sm';
-                btnText.textContent = 'Place Order (Cash on Delivery)';
+                if (optOnline) optOnline.className = 'cursor-pointer flex items-center p-2.5 rounded-xl border-2 border-slate-200 bg-slate-50 text-slate-700 transition-all';
+                if (optCod) optCod.className = 'cursor-pointer flex items-center p-2.5 rounded-xl border-2 border-emerald-600 bg-emerald-50 text-forest-950 transition-all shadow-sm';
+                if (btnText) btnText.textContent = `Place Order (Cash on Delivery - ${data.price})`;
             }
         }
 
         // 1-Click Direct WhatsApp Order
         function orderViaWhatsAppDirect() {
+            const data = formatData[currentFormat] || formatData['physical'];
             const name = (document.getElementById('custName')?.value || '').trim();
             const phone = (document.getElementById('custPhone')?.value || '').trim();
             const addr = (document.getElementById('custAddress')?.value || '').trim();
             
-            let msg = 'Namaste Salendra ji, mujhe "Land Manual of Jharkhand" (Physical Book - ₹449) order karni hai.';
+            let msg = `Namaste Salendra ji, mujhe "Land Manual of Jharkhand" (${data.title} - ${data.price}) order karni hai.`;
             if (name) msg += `\n*Naam:* ${name}`;
             if (phone) msg += `\n*Phone:* ${phone}`;
-            if (addr) msg += `\n*Address:* ${addr}`;
-            msg += '\nKripya dispatch aur order confirm karein.';
+            if (data.requiresAddress && addr) msg += `\n*Address:* ${addr}`;
+            msg += '\nKripya confirm karein.';
 
             const url = `https://wa.me/918409813643?text=${encodeURIComponent(msg)}`;
             window.open(url, '_blank');
@@ -1071,6 +1117,10 @@
             if (selectedPaymentMode === 'online') {
                 // Razorpay Payment Gateway Flow
                 if (typeof Razorpay === 'undefined') {
+                    if (currentFormat === 'ebook') {
+                        alert("ऑनलाइन पेमेंट गेटवे लोड नहीं हो पाया। कृपया इंटरनेट कनेक्शन जांचें या डायरेक्ट WhatsApp (+91 8409813643) पर संपर्क करें।");
+                        return;
+                    }
                     const useCod = confirm("ऑनलाइन पेमेंट गेटवे लोड नहीं हो पाया (Ad-blocker या नेटवर्क रुकावट की वजह से)।\n\nक्या आप 'Cash on Delivery' (डिलीवरी पर ₹449 नकद) से आर्डर कन्फर्म करना चाहते हैं?");
                     if (useCod) {
                         updatePaymentMode('cod');
@@ -1090,19 +1140,21 @@
                 submitBtn.disabled = true;
                 submitText.textContent = 'Opening Secure Gateway...';
 
+                const targetAmount = data.amountPaise || (currentFormat === 'ebook' ? 29900 : 44900);
+
                 const options = {
                     key: "rzp_live_TxXKt2MAAU4LHq",
-                    amount: 44900, // ₹449 in paise (449 * 100)
+                    amount: targetAmount,
                     currency: "INR",
                     name: "Land Manual of Jharkhand",
-                    description: "Author: Salendra Kumar Verma",
+                    description: `${data.title} - Author: Salendra Kumar Verma`,
                     prefill: {
                         name: custName,
                         contact: custPhone,
                         email: custEmail || 'Salendra.8551@gmail.com'
                     },
                     notes: {
-                        address: custAddress,
+                        address: data.requiresAddress ? custAddress : 'Digital Edition (Instant Download)',
                         format: data.title
                     },
                     theme: {
@@ -1134,6 +1186,12 @@
                     rzp.on('payment.failed', function (resp) {
                         console.error("Razorpay error:", resp);
                         const errDesc = (resp && resp.error && (resp.error.description || resp.error.reason)) || 'Transaction cancelled';
+                        if (currentFormat === 'ebook') {
+                            alert(`ऑनलाइन पेमेंट में समस्या: ${errDesc}\n\nकृपया दोबारा प्रयास करें या सहायता के लिए WhatsApp (+91 8409813643) पर संपर्क करें।`);
+                            submitBtn.disabled = false;
+                            updatePaymentMode(selectedPaymentMode);
+                            return;
+                        }
                         const switchCod = confirm(`ऑनलाइन पेमेंट में समस्या: ${errDesc}\n\nक्या आप 'Cash on Delivery' (डिलीवरी पर ₹449 नकद) से आर्डर पूरा करना चाहते हैं?`);
                         submitBtn.disabled = false;
                         updatePaymentMode(selectedPaymentMode);
@@ -1155,6 +1213,10 @@
                     console.error("Razorpay open error:", rzpErr);
                     submitBtn.disabled = false;
                     updatePaymentMode(selectedPaymentMode);
+                    if (currentFormat === 'ebook') {
+                        alert("Razorpay पेमेंट गेटवे खुलने में समस्या आई। कृपया WhatsApp (+91 8409813643) पर संपर्क करें।");
+                        return;
+                    }
                     const switchCod = confirm("Razorpay पेमेंट गेटवे खुलने में समस्या आई।\n\nक्या आप 'Cash on Delivery' (COD) से आर्डर कन्फर्म करना चाहते हैं?");
                     if (switchCod) {
                         updatePaymentMode('cod');
@@ -1199,7 +1261,7 @@
                 name: info.custName,
                 phone: info.custPhone,
                 email: info.custEmail || 'Not Provided',
-                address: data.requiresAddress ? info.custAddress : 'Digital Edition (Download)',
+                address: data.requiresAddress ? info.custAddress : 'Digital Edition (Instant Download)',
                 format: data.title || currentFormat,
                 price: data.price,
                 paymentMethod: info.paymentMethod,
@@ -1257,7 +1319,7 @@
         }
 
         function showOrderSuccess(order) {
-            const data = formatData[currentFormat];
+            const data = formatData[currentFormat] || formatData['physical'];
             document.getElementById('successOrderId').textContent = 'Order ID: ' + (order.orderId || 'LMJ-2026-CONFIRMED');
             document.getElementById('successFormat').textContent = data.title;
             document.getElementById('successCustomer').textContent = `${order.customer.name} (${order.customer.phone})`;
@@ -1280,13 +1342,23 @@
 
             const digitalSec = document.getElementById('digitalDeliverySection');
             const physicalSec = document.getElementById('physicalDeliverySection');
+            const downloadBtn = document.getElementById('digitalDownloadBtn');
 
-            digitalSec.classList.add('hidden');
-            physicalSec.classList.remove('hidden');
+            if (currentFormat === 'ebook') {
+                if (digitalSec) digitalSec.classList.remove('hidden');
+                if (physicalSec) physicalSec.classList.add('hidden');
+                if (downloadBtn) {
+                    downloadBtn.href = data.downloadUrl || 'Land_Manual_of_Jharkhand_EBook.pdf';
+                    downloadBtn.setAttribute('download', 'Land_Manual_of_Jharkhand_EBook.pdf');
+                }
+            } else {
+                if (digitalSec) digitalSec.classList.add('hidden');
+                if (physicalSec) physicalSec.classList.remove('hidden');
+            }
 
             // Setup WhatsApp direct connect link (+91 8409813643)
             const payText = order.paymentId && order.paymentId !== 'COD-VERIFY' ? `Payment: PAID (Razorpay ID: ${order.paymentId})` : 'Payment: Cash on Delivery';
-            const waMsg = encodeURIComponent(`Hello, I have placed an order for "Land Manual of Jharkhand" (Physical Book - ₹449). Order ID: ${order.orderId || 'LMJ-2026'}. ${payText}. Please confirm dispatch.`);
+            const waMsg = encodeURIComponent(`Hello, I have placed an order for "Land Manual of Jharkhand" (${data.title} - ${data.price}). Order ID: ${order.orderId || 'LMJ-2026'}. ${payText}. Please confirm.`);
             document.getElementById('whatsappSupportBtn').href = `https://wa.me/918409813643?text=${waMsg}`;
 
             const successModal = document.getElementById('orderSuccessModal');
@@ -1357,10 +1429,10 @@
             const q = query.toLowerCase();
 
             if (q.includes('price') || q.includes('cost') || q.includes('kimat') || q.includes('rupaye') || q.includes('kitna') || q.includes('kitne') || q.includes('rate')) {
-                return "📖 <strong>Land Manual of Jharkhand (Physical Book)</strong> ka special price sirf <strong>₹449/-</strong> hai (MRP ₹699) with <strong>Free Delivery</strong> all over Jharkhand & India! E-Book aur Audiobook jaldi hi Coming Soon hain.";
+                return "📖 <strong>Land Manual of Jharkhand:</strong><br>• <strong>Physical Book (Hardcopy):</strong> ₹449/- (Free Delivery across India)<br>• <strong>E-Book (PDF):</strong> ₹299/- (Instant PDF Download)<br>• <strong>Audiobook:</strong> Coming Soon.";
             }
             if (q.includes('ebook') || q.includes('e-book') || q.includes('pdf') || q.includes('download')) {
-                return "📱 <strong>E-Book (Digital PDF/ePub)</strong> edition abhi <strong>Coming Soon</strong> hai. Jaise hi live hoga aapko alert mil jayega. Abhi aap Physical Book sirf ₹449/- mein order kar sakte hain.";
+                return "📱 <strong>E-Book (Digital PDF):</strong> Price sirf <strong>₹299/-</strong> hai! Online pay karne par turant 191 pages ki searchable PDF file download kar sakte hain.";
             }
             if (q.includes('audio') || q.includes('audiobook') || q.includes('sunna')) {
                 return "🎧 <strong>Audiobook</strong> edition bhi abhi <strong>Coming Soon</strong> hai! Isme complete revenue laws ka saral Hindi audio narration hoga.";
@@ -1375,7 +1447,7 @@
                 return "📑 <strong>Dakhil-Kharij (Mutation):</strong> Manual mein Jharbhoomi portal par online aavedan, Khatian milan, Jamabandi sudhar, aur Circle Officer (CO) ya DCLR court appeal ke practical solutions diye gaye hain.";
             }
             if (q.includes('order') || q.includes('buy') || q.includes('kharid') || q.includes('kaise')) {
-                return "📦 <strong>Order Process:</strong> Upar diye gaye <strong>'Pre-Order Now'</strong> button par click karein, apna Naam, Mobile Number aur Address dalein. Physical Book sirf <strong>₹449/-</strong> mein Cash on Delivery ya UPI se mil jayegi.";
+                return "📦 <strong>Order Process:</strong> Upar diye gaye <strong>'Pre-Order Now'</strong> button par click karein. Aap <strong>Physical Book (₹449)</strong> Cash on Delivery/UPI se ya <strong>E-Book PDF (₹299)</strong> instant download ke sath order kar sakte hain.";
             }
             if (q.includes('contact') || q.includes('phone') || q.includes('call') || q.includes('number') || q.includes('whatsapp') || q.includes('helpline') || q.includes('email')) {
                 return "📞 <strong>Contact &amp; Support:</strong><br>• Phone / WhatsApp: <strong>+91 8409813643</strong><br>• Email: <strong>Salendra.8551@gmail.com</strong>";

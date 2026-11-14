@@ -38,13 +38,13 @@ export default async function handler(req, res) {
 
         // Format specific response details
         let deliveryInfo = {};
-        if (format === 'ebook') {
+        if (format === 'ebook' || (typeof format === 'string' && format.toLowerCase().includes('ebook'))) {
             deliveryInfo = {
                 type: 'digital_download',
-                downloadUrl: 'https://github.com/deepakprasadverma/land-manual-jharkhand/releases/download/v1.0/Land_Manual_Jharkhand_Sample.pdf',
+                downloadUrl: '/Land_Manual_of_Jharkhand_EBook.pdf',
                 instructions: 'Your download link is ready. A copy has also been scheduled for your email.'
             };
-        } else if (format === 'audiobook') {
+        } else if (format === 'audiobook' || (typeof format === 'string' && format.toLowerCase().includes('audio'))) {
             deliveryInfo = {
                 type: 'audio_stream',
                 streamUrl: 'https://github.com/deepakprasadverma/land-manual-jharkhand',
@@ -58,6 +58,7 @@ export default async function handler(req, res) {
             };
         }
 
+        const isEbook = format === 'ebook' || (typeof format === 'string' && format.toLowerCase().includes('ebook'));
         const orderRecord = {
             orderId,
             timestamp,
@@ -65,11 +66,11 @@ export default async function handler(req, res) {
                 name: name.trim(),
                 phone: phone.trim(),
                 email: (email || 'Not Provided').trim(),
-                address: (address || 'Digital Edition - No Shipping Required').trim()
+                address: (address || (isEbook ? 'Digital Edition - Instant PDF Download' : 'Digital Edition - No Shipping Required')).trim()
             },
             order: {
                 format,
-                price: price || '₹449',
+                price: price || (isEbook ? '₹299' : '₹449'),
                 paymentMethod,
                 paymentId,
                 status: status || 'Confirmed'
